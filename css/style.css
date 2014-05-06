@@ -1,0 +1,53 @@
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+* {
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+.window {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+.grid {
+  font-size: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.grid .grid-el {
+  width: 225px;
+  height: 225px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border: 1px solid #000;
+  -moz-opacity: 0.35;
+  -khtml-opacity: 0.35;
+  -webkit-opacity: 0.35;
+  opacity: 0.35;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=35);
+  filter: alpha(opacity=35);
+  display: inline-block;
+  vertical-align: top;
+  margin: 46px;
+}
+.test {
+  width: 225px;
+  height: 225px;
+  background: #ccc;
+}

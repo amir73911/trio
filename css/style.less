@@ -1,0 +1,49 @@
+@import "elements.less";
+
+@grid-size: 225px;
+@grid-el-offset: 46px;
+
+
+* {
+  .box-sizing();
+}
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+
+.window {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.grid {
+  font-size: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  .grid-el {
+    width: @grid-size;
+    height: @grid-size;
+    .rotation(45deg);
+
+    border: 1px solid #000;
+    .opacity(.35);
+
+    display: inline-block;
+    vertical-align: top;
+    margin: @grid-el-offset;
+  }
+}
+
+.test {
+  width: @grid-size;
+  height: @grid-size;
+  //.rotation(45deg);
+  background: #ccc;
+  //margin: @grid-el-offset;
+}
