@@ -28,6 +28,7 @@ body {
 }
 /* Сетка */
 .grid {
+  z-index: 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -60,20 +61,24 @@ body {
   margin: 47px;
   z-index: 1;
 }
-.rhomb_block .inner {
+.rhomb_block .inner_back {
   z-index: 2;
   position: relative;
   background: rgba(17, 21, 23, 0.37);
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
-.rhomb_block .inner > * {
+.rhomb_block .inner_back .inner {
+  width: 100%;
+  height: 100%;
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
+/*  */
 .draggable .handler {
   z-index: 3;
   background: url("../images/drag_handler.png") no-repeat;
@@ -101,12 +106,31 @@ body {
   bottom: 0;
   right: 640px;
 }
+/* Главное меню */
 nav.main_nav {
+  padding-top: 35px;
   text-align: center;
 }
 nav.main_nav ul li a {
+  display: block;
+  padding: 7px 0;
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   font: 18px 'myriadpro-regular';
+}
+header {
+  position: relative;
+  z-index: 1;
+}
+header .logo {
+  position: absolute;
+  left: 90px;
+  top: 20px;
+}
+.small-slider {
+  height: 290px;
+  width: 290px;
+  margin-top: -61px;
+  margin-left: -86px;
 }

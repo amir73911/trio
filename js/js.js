@@ -2,6 +2,17 @@ $(function(){
 
     initGrid();
 
+    $(".small-slider").royalSlider({
+        imageScaleMode: "none",
+        slidesSpacing: 0,
+        loop: true,
+        controlNavigation: "none",
+        autoPlay: {
+            enabled: true,
+            pauseOnHover: true
+        }
+    });
+
 });
 
 function initGrid() {
@@ -13,6 +24,7 @@ function initGrid() {
             //containment: ".window",
             cursor: "move",
             handle: ".handler",
+            stack: ".draggable",
             start: function() {
                 $(this).removeClass(function (index, css) {
                     return (css.match (/\bpos-\S+/g) || []).join(' ');
