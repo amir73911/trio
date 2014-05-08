@@ -16,6 +16,7 @@ html {
 }
 body {
   height: 100%;
+  font-family: 'myriadpro-regular', arial;
 }
 /* Окно (страница) */
 .window {
@@ -106,18 +107,43 @@ body {
   bottom: 0;
   right: 640px;
 }
-/* Главное меню */
-nav.main_nav {
+/* Маленькое меню */
+nav.small_nav {
   padding-top: 35px;
   text-align: center;
 }
-nav.main_nav ul li a {
+nav.small_nav ul li a {
   display: block;
   padding: 7px 0;
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   font: 18px 'myriadpro-regular';
+}
+nav.main_nav a {
+  color: #fff;
+  text-decoration: none;
+}
+nav.main_nav ul {
+  display: none;
+}
+nav.main_nav .opener {
+  display: block;
+  background: rgba(17, 21, 23, 0.37);
+  width: 54px;
+  height: 54px;
+  padding: 5px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+nav.main_nav .opener a {
+  display: block;
+  background: rgba(17, 21, 23, 0.37);
+  height: 100%;
+  width: 100%;
 }
 header {
   position: relative;
@@ -133,4 +159,8 @@ header .logo {
   width: 290px;
   margin-top: -61px;
   margin-left: -86px;
+}
+.site-page-catalog {
+  height: 100%;
+  background: rgba(17, 21, 23, 0.37);
 }
