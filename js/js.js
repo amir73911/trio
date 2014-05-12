@@ -2,7 +2,7 @@ $(function(){
 
     initGrid();
 
-    $(".small-slider").royalSlider({
+    $(".actions-slider").royalSlider({
         imageScaleMode: "none",
         slidesSpacing: 0,
         loop: true,
@@ -12,6 +12,10 @@ $(function(){
             pauseOnHover: true
         }
     });
+
+    $('.catalog-slider').royalSlider({
+        controlNavigation: 'thumbnails'
+    })
 
 });
 
