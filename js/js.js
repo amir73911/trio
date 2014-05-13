@@ -22,7 +22,7 @@ $(function(){
     })
 
     $.backstretch([
-        "images/backs/1.jpg",
+        //"images/backs/1.jpg",
         "images/backs/meri.jpg",
         "images/backs/parma.jpg"
     ], {duration: 4000, fade: 1000});
@@ -85,12 +85,16 @@ function mainNavAnimate() {
 }
 
 function initNavigation() {
-    $(window).navigation();
+
+    $.fn.navigation('show', 'main');  //первый запуск
+
     $('.nav-link').click(function(event){
         var href = event.target.hash,
-            method = href.slice(1);
+            openPage = href.slice(1),
+            closePage = $('.site-page.active').attr('id');
 
-        $(window).navigation(method);
+        $.fn.navigation('close', closePage);
+        $.fn.delay(5000).navigation('show', openPage);
 
         event.preventDefault();
     });
@@ -98,21 +102,34 @@ function initNavigation() {
 
 (function( $ ){
     var methods = {
-        init : function() {
-
-            $('.site-page-main').show();
+        show : function(page) {
+            switch (page) {
+                case 'main':
+                    $('.site-page-main').fadeIn(200).addClass('active');
+                    $('.site-page-main .draggable').delay(200).fadeIn(200)
+                    break;
+                case 'catalog':
+                    $('.site-page-catalog').delay(2000).fadeIn(200).addClass('active');
+                    break;
+            }
         },
-        catalog : function() {
-            $('.site-page-catalog').show();
-        },
-        hide : function() {
-
+        close : function(page) {
+            switch (page) {
+                case 'main':
+                    $('.site-page-main .draggable').fadeOut(200);
+                    $('.site-page-main').delay(200).fadeOut(200);
+                    break;
+                case 'catalog':
+                    $('.site-page-catalog').fadeOut(200);
+                    $('.site-page-main').delay(200).fadeOut(200);
+                    break;
+            }
         }
     };
 
     $.fn.navigation = function( method ) {
 
-        $('.site-page').hide();
+        $('.site-page').removeClass('active');
 
         if ( methods[method] ) {
             return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));

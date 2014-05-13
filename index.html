@@ -2,6 +2,7 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="css/reset.css"/>
     <link rel="stylesheet" href="css/royalslider.css"/>
@@ -13,6 +14,7 @@
     <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
     <script src="js/jquery.royalslider.min.js"></script>
     <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
     <!--script src="js/animations.js"></script-->
     <script src="js/js.js"></script>
 
@@ -23,10 +25,10 @@
 
 
         <header>
-            <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""/></a></div>
+            <div class="logo"><a href="#main" class="nav-link"></a></div>
         </header>
 
-        <div class="site-page site-page-main">
+        <div id="main" class="site-page site-page-main">
             <div class="draggable abs-block">
                 <div class="rhomb_block grid-size-1">
                     <div class="inner_back">
@@ -60,6 +62,12 @@
                                     <li><a href="#catalog" class="nav-link">Каталог</a></li>
                                     <li><a href="#">Салоны</a></li>
                                 </ul>
+                                <!--<ul>-->
+                                    <!--<li><a href="images/temp_img/Catalog_product_1c_landscape_04.jpg">Партнерам</a></li>-->
+                                    <!--<li><a href="images/temp_img/About_1a.png">О компании</a></li>-->
+                                    <!--<li><a href="images/temp_img/Catalog_1b_01.png">Каталог</a></li>-->
+                                    <!--<li><a href="images/temp_img/Saloon_2a_01.png">Салоны</a></li>-->
+                                <!--</ul>-->
                             </nav>
                         </div>
                     </div>
@@ -68,7 +76,7 @@
             <div class="grid"></div>
         </div>
 
-        <div class="site-page site-page-catalog">
+        <div id="catalog" class="site-page site-page-catalog">
             <nav class="main_nav">
                 <div class="opener"></div>
                 <ul class="level-1">

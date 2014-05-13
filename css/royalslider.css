@@ -97,6 +97,7 @@
     height: 84px;
     position: absolute;
     top: 102px;
+    z-index: 5;
 }
 .rsArrow.rsArrowLeft {
     background-position: left center;

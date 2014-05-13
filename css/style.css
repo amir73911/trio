@@ -80,6 +80,9 @@ body {
   transform: rotate(-45deg);
 }
 /*  */
+.draggable {
+  z-index: 1;
+}
 .draggable .handler {
   z-index: 3;
   background: url("../images/drag_handler.png") no-repeat;
@@ -179,11 +182,23 @@ header .logo {
   left: 90px;
   top: 20px;
 }
+header .logo a {
+  display: block;
+  background: url("../images/logo.png");
+  width: 141px;
+  height: 79px;
+}
 .actions-slider {
   height: 290px;
   width: 290px;
   margin-top: -61px;
   margin-left: -86px;
+}
+.site-page {
+  display: none;
+}
+.site-page.active {
+  display: block;
 }
 .site-page-catalog {
   height: 100%;
