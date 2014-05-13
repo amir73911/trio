@@ -199,9 +199,6 @@ header {
 
 .site-page {
   display: none;
-  &.active {
-    display: block;
-  }
 }
 .site-page-catalog {
   height: 100%;
@@ -214,30 +211,59 @@ header {
   left: 500px;
   width: @grid-size*2;
   height: @grid-size*2;
+  .rotation(-45deg);
   .rsOverflow {
-    .rotation(45deg);
+
     padding: 11.31px;
     background: rgba(17,21,23,.37);
-    &:before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      margin: 11.31px;
-      width: 100%;
-      height: 100%;
-      background: rgba(17,21,23,.37);
-      content: "";
-    }
+//    &:before {
+//      position: absolute;
+//      top: 0;
+//      left: 0;
+//      margin: 11.31px;
+//      width: 100%;
+//      height: 100%;
+//      background: rgba(17,21,23,.37);
+//      content: "";
+//    }
   }
   .rsContainer {
 
   }
   .rsSlide  {
-
+    background: rgba(17,21,23,.37);
     .rsContent {
-      //background: rgba(17,21,23,.37);
+      .rotation(45deg);
+      text-align: center;
     }
   }
+  .rsThumbs {
+    position: absolute;
+    overflow: visible;
+  }
+  .rsThumb {
+    width: 175px;
+    height: 175px;
+    display: block;
+    background: rgba(17,21,23,.37);
+    padding: 11.31px;
+    .rsTmb {
+      background: rgba(17,21,23,.37);
+      display: block;
+      height: 100%;
+      span {
+        font: bold 30px 'myriadpro-regular';
+        font-style: italic;
+        color: #fff;
+        display: block;
+        text-align: center;
+        .rotation(45deg);
+        width: 194px;
+        padding-top: 68px;
+      }
+    }
+  }
+
 }
 
 

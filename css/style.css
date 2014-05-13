@@ -197,9 +197,6 @@ header .logo a {
 .site-page {
   display: none;
 }
-.site-page.active {
-  display: block;
-}
 .site-page-catalog {
   height: 100%;
   background: rgba(17, 21, 23, 0.37);
@@ -210,25 +207,56 @@ header .logo a {
   left: 500px;
   width: 452.54px;
   height: 452.54px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 .catalog-slider .rsOverflow {
+  padding: 11.31px;
+  background: rgba(17, 21, 23, 0.37);
+}
+.catalog-slider .rsSlide {
+  background: rgba(17, 21, 23, 0.37);
+}
+.catalog-slider .rsSlide .rsContent {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  padding: 11.31px;
-  background: rgba(17, 21, 23, 0.37);
+  text-align: center;
 }
-.catalog-slider .rsOverflow:before {
+.catalog-slider .rsThumbs {
   position: absolute;
-  top: 0;
-  left: 0;
-  margin: 11.31px;
-  width: 100%;
-  height: 100%;
+  overflow: visible;
+}
+.catalog-slider .rsThumb {
+  width: 175px;
+  height: 175px;
+  display: block;
   background: rgba(17, 21, 23, 0.37);
-  content: "";
+  padding: 11.31px;
+}
+.catalog-slider .rsThumb .rsTmb {
+  background: rgba(17, 21, 23, 0.37);
+  display: block;
+  height: 100%;
+}
+.catalog-slider .rsThumb .rsTmb span {
+  font: bold 30px 'myriadpro-regular';
+  font-style: italic;
+  color: #fff;
+  display: block;
+  text-align: center;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  width: 194px;
+  padding-top: 68px;
 }
 .offers_slideshow {
   left: 50%;
