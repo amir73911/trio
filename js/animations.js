@@ -1,5 +1,4 @@
 $(function(){
-    mainNavAnimate(); /* Главное меню */
 
     window.Epoc = {
         Cache: {},
@@ -300,24 +299,3 @@ $(function(){
 
 })
 
-function mainNavAnimate() {
-    var parent    = $('.main_nav');
-    var opener    = parent.find('.opener');
-    var ul_lev1   = parent.find('.level-1');
-    var ul_lev2   = parent.find('.level-2');
-    var drop      = parent.find('.drop');
-    var droped_ul = drop.find('.level-2');
-
-    parent.hover(function() {
-        ul_lev1.fadeIn(200);
-    }, function() {
-        ul_lev1.fadeOut(200);
-        ul_lev2.fadeOut(200);
-    });
-
-    drop.hover(function() {
-        $(this).find('.level-2').stop(1,1).fadeIn(200);
-    }, function() {
-        $(this).find('.level-2').stop(1,1).fadeOut(200);
-    });
-}

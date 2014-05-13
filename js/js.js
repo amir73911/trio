@@ -2,6 +2,9 @@ $(function(){
 
     initGrid();
     initPositions();
+    initNavigation();
+
+    mainNavAnimate(); /* Главное меню */
 
     $(".actions-slider").royalSlider({
         imageScaleMode: "none",
@@ -20,8 +23,8 @@ $(function(){
 
     $.backstretch([
         "images/backs/1.jpg",
-        "http://dl.dropbox.com/u/515046/www/garfield-interior.jpg",
-        "http://dl.dropbox.com/u/515046/www/cheers.jpg"
+        "images/backs/meri.jpg",
+        "images/backs/parma.jpg"
     ], {duration: 4000, fade: 1000});
 
 });
@@ -57,3 +60,67 @@ function initPositions() {
         })
     })
 }
+
+
+function mainNavAnimate() {
+    var parent    = $('.main_nav');
+    var opener    = parent.find('.opener');
+    var ul_lev1   = parent.find('.level-1');
+    var ul_lev2   = parent.find('.level-2');
+    var drop      = parent.find('.drop');
+    var droped_ul = drop.find('.level-2');
+
+    parent.hover(function() {
+        ul_lev1.fadeIn(200);
+    }, function() {
+        ul_lev1.fadeOut(200);
+        ul_lev2.fadeOut(200);
+    });
+
+    drop.hover(function() {
+        $(this).find('.level-2').stop(1,1).fadeIn(200);
+    }, function() {
+        $(this).find('.level-2').stop(1,1).fadeOut(200);
+    });
+}
+
+function initNavigation() {
+    $(window).navigation();
+    $('.nav-link').click(function(event){
+        var href = event.target.hash,
+            method = href.slice(1);
+
+        $(window).navigation(method);
+
+        event.preventDefault();
+    });
+}
+
+(function( $ ){
+    var methods = {
+        init : function() {
+
+            $('.site-page-main').show();
+        },
+        catalog : function() {
+            $('.site-page-catalog').show();
+        },
+        hide : function() {
+
+        }
+    };
+
+    $.fn.navigation = function( method ) {
+
+        $('.site-page').hide();
+
+        if ( methods[method] ) {
+            return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+        } else if ( typeof method === 'object' || ! method ) {
+            return methods.init.apply( this, arguments );
+        } else {
+            $.error( 'Метод с именем ' +  method + ' не существует' );
+        }
+    };
+
+})(jQuery);
