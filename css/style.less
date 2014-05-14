@@ -301,3 +301,39 @@ header {
     }
   }
 }
+.subcatalog-slider-wrapper {
+  .subcatalog-slider {
+    display: none;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    width: @grid-size*2;
+    height: @grid-size*2;
+    margin-left: -(@grid-size*2)/2;
+    &>.rsOverflow {
+      padding: 10px;
+      background: rgba(17,21,23,.37);
+      height: @grid-size*2 !important;
+      &>.rsContainer {
+        &>.rsSlide  {
+          background: rgba(17,21,23,.37);
+          &>.rsContent {
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            .head {
+              color: #fff;
+              font: bold italic 60px 'myriadpro-regular';
+            }
+            .subcatalog-link {
+              background: url("../images/subcatalog_link.png");
+              width: 150px;
+              height: 150px;
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}

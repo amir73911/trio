@@ -5,6 +5,7 @@ $(function(){
     initNavigation();
 
     mainNavAnimate(); /* Главное меню */
+    openCatalogTwo(); /* Открытие подкаталога */
 
     $(".actions-slider").royalSlider({
         imageScaleMode: "none",
@@ -17,7 +18,7 @@ $(function(){
         }
     });
 
-
+    /* Слайдер каталога */
     $('.catalog-slider')
         .royalSlider({
             controlNavigation: 'thumbnails',
@@ -41,8 +42,22 @@ $(function(){
         el2.attr('style', el.attr('style'));
     });
 
+    /* Слфйдер подкаталога */
+    $('.subcatalog-slider')
+        .royalSlider({
+            controlNavigation: 'thumbnails',
+            arrowsNav: false,
+            navigateByClick: false,
+            controlNavThumbsNavigation: false,
+            loop: true,
+            thumbs: {
+                arrows: false,
+                spacing: 0
+            },
+            slides: $('.subcatalog-slider .rsContent')
+        });
+
     $.backstretch([
-        //"images/backs/1.jpg",
         "images/backs/meri.jpg",
         "images/backs/parma.jpg"
     ], {duration: 4000, fade: 1000});
@@ -104,8 +119,8 @@ function mainNavAnimate() {
     });
 }
 
-function initNavigation() {
 
+function initNavigation() {
     $.fn.navigation('show', 'main');  //первый запуск
 
     $('.nav-link').click(function(event){
@@ -113,12 +128,27 @@ function initNavigation() {
             openPage = href.slice(1),
             closePage = $('.site-page.active').attr('id');
 
-        $.fn.navigation('close', closePage);
-        $.fn.delay(5000).navigation('show', openPage);
-
+        if (openPage != closePage) {
+            $.fn.navigation('close', closePage);
+            $.fn.navigation('show', openPage);
+        }
         event.preventDefault();
     });
 }
+
+function openCatalogTwo() {
+    $('.catalog-slider').on('click', '.link', function(){
+        var slider = $('.catalog-slider'),
+            subslider = $('.subcatalog-slider');
+            subcatalogId = $(this).attr('id');
+
+        slider.find('.rsThumb').fadeOut(300);
+        slider.delay(400).animate({"transform": "rotate(0deg)"}, 400).fadeOut(400);
+
+        subslider.delay(800).fadeIn(400)
+    });
+}
+
 
 (function( $ ){
     var methods = {
@@ -129,7 +159,7 @@ function initNavigation() {
                     $('.site-page-main .draggable').delay(200).fadeIn(200);
                     break;
                 case 'catalog':
-                    $('.site-page-catalog').delay(600).fadeIn(200).addClass('active');
+                    $('.site-page-catalog').delay(300).fadeIn(200).addClass('active');
                     break;
             }
         },
@@ -148,9 +178,7 @@ function initNavigation() {
     };
 
     $.fn.navigation = function( method ) {
-
         $('.site-page').removeClass('active');
-
         if ( methods[method] ) {
             return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
         } else if ( typeof method === 'object' || ! method ) {
