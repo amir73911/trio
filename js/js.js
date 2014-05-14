@@ -17,15 +17,29 @@ $(function(){
         }
     });
 
-    $('.catalog-slider').royalSlider({
-        controlNavigation: 'thumbnails',
-        arrowsNav: false,
-        navigateByClick: false,
-        thumbs: {
-            arrows: false,
-            spacing: 0
-        }
-    })
+
+    $('.catalog-slider')
+        .royalSlider({
+            controlNavigation: 'thumbnails',
+            arrowsNav: false,
+            navigateByClick: false,
+            controlNavThumbsNavigation: false,
+            loop: true,
+            thumbs: {
+                arrows: false,
+                spacing: 0
+            },
+            slides: $('.catalog-slider .rsContent')
+        });
+
+    $('.catalog-slider').find('.rsThumbs').clone(true, true).addClass('add-thumbs').appendTo('.catalog-slider');
+
+    var catalogSlider = $('.catalog-slider').data('royalSlider');
+    catalogSlider.ev.on('rsDragRelease', function(event) {
+        var el = $('.catalog-slider').find('.rsThumbs').eq(0).find('.rsThumbsContainer');
+        var el2 = $('.catalog-slider').find('.rsThumbs.add-thumbs').find('.rsThumbsContainer');
+        el2.attr('style', el.attr('style'));
+    });
 
     $.backstretch([
         //"images/backs/1.jpg",
