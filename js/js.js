@@ -42,7 +42,7 @@ $(function(){
         el2.attr('style', el.attr('style'));
     });
 
-    /* Слфйдер подкаталога */
+    /* Слайдер подкаталога */
     $('.subcatalog-slider')
         .royalSlider({
             controlNavigation: 'thumbnails',
@@ -57,10 +57,10 @@ $(function(){
             slides: $('.subcatalog-slider .rsContent')
         });
 
-    $.backstretch([
-        "images/backs/meri.jpg",
-        "images/backs/parma.jpg"
-    ], {duration: 4000, fade: 1000});
+//    $.backstretch([
+//        "images/backs/meri.jpg",
+//        "images/backs/parma.jpg"
+//    ], {duration: 4000, fade: 1000});
 
 });
 

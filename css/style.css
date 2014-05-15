@@ -328,11 +328,66 @@ header .logo a {
 }
 .subcatalog-slider-wrapper .subcatalog-slider > .rsOverflow > .rsContainer > .rsSlide > .rsContent .head {
   color: #fff;
-  font: bold italic 60px 'myriadpro-regular';
+  height: 110px;
+  font: bold italic 60px/110px 'myriadpro-regular';
+}
+.subcatalog-slider-wrapper .subcatalog-slider > .rsOverflow > .rsContainer > .rsSlide > .rsContent .image {
+  text-align: center;
+}
+.subcatalog-slider-wrapper .subcatalog-slider > .rsOverflow > .rsContainer > .rsSlide > .rsContent .image img {
+  min-width: 100%;
+  height: 100%;
 }
 .subcatalog-slider-wrapper .subcatalog-slider > .rsOverflow > .rsContainer > .rsSlide > .rsContent .subcatalog-link {
   background: url("../images/subcatalog_link.png");
   width: 150px;
   height: 150px;
   display: block;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  margin-left: -75px;
+}
+.subcatalog-slider-wrapper .subcatalog-slider > .rsThumbs {
+  width: 500px;
+  background: rgba(17, 21, 23, 0.37);
+  position: absolute;
+  top: 0;
+  left: -500px;
+}
+.subcatalog-slider-wrapper .subcatalog-slider > .rsThumbs .rsThumb {
+  width: 320px;
+  height: 320px;
+  padding: 10px;
+}
+.subcatalog-slider-wrapper .subcatalog-slider > .rsThumbs .rsThumb .rsTmb {
+  background: rgba(17, 21, 23, 0.37);
+  width: 100%;
+  height: 100%;
+}
+.subcatalog-slider-wrapper .subcatalog-slider > .rsThumbs .rsThumb .rsTmb .thumb-head {
+  color: #fff;
+  font: bold italic 30px/70px 'myriadpro-regular';
+  text-align: center;
+  height: 70px;
+}
+.subcatalog-slider-wrapper .subcatalog-slider > .rsThumbs .rsThumb .rsTmb .thumb-image {
+  text-align: center;
+  overflow: hidden;
+  height: 230px;
+}
+.subcatalog-slider-wrapper .subcatalog-slider > .rsThumbs .rsThumb .rsTmb .thumb-image img {
+  min-width: 100%;
+  height: 100%;
+}
+.subcatalog-slider-wrapper .subcatalog-slider > .rsThumbs .rsThumb .rsTmb .thumb-link {
+  background: url("../images/subcatalog_link.png");
+  background-size: contain;
+  height: 85px;
+  width: 85px;
+  display: block;
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  margin-left: -43px;
 }

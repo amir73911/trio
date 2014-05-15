@@ -323,14 +323,69 @@ header {
             height: 100%;
             .head {
               color: #fff;
-              font: bold italic 60px 'myriadpro-regular';
+              height: 110px;
+              font: bold italic 60px/110px 'myriadpro-regular';
+            }
+            .image {
+              text-align: center;
+              img {
+                min-width: 100%;
+                height: 100%;
+              }
             }
             .subcatalog-link {
               background: url("../images/subcatalog_link.png");
               width: 150px;
               height: 150px;
               display: block;
+              position: absolute;
+              top: 200px;
+              left: 50%;
+              margin-left: -75px;
             }
+          }
+        }
+      }
+    }
+    &>.rsThumbs {
+      width: 500px;
+      background: rgba(17,21,23,.37);
+      position: absolute;
+      top: 0;
+      left: -500px;
+      .rsThumb {
+        width: @grid-width;
+        height: @grid-width;
+        padding: 10px;
+        .rsTmb {
+          background: rgba(17,21,23,.37);
+          width: 100%;
+          height: 100%;
+          .thumb-head {
+            color: #fff;
+            font: bold italic 30px/70px 'myriadpro-regular';
+            text-align: center;
+            height: 70px;
+          }
+          .thumb-image {
+            text-align: center;
+            overflow: hidden;
+            height: 230px;
+            img {
+              min-width: 100%;
+              height: 100%;
+            }
+          }
+          .thumb-link {
+            background: url("../images/subcatalog_link.png");
+            background-size: contain;
+            height: 85px;
+            width: 85px;
+            display: block;
+            position: absolute;
+            top: 150px;
+            left: 50%;
+            margin-left: -43px;
           }
         }
       }
