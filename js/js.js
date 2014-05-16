@@ -56,6 +56,14 @@ $(function(){
             },
             slides: $('.subcatalog-slider .rsContent')
         });
+    $('.subcatalog-slider').find('.rsThumbs').clone(true, true).addClass('add-thumbs').appendTo('.subcatalog-slider');
+
+    var subcatalogSlider = $('.subcatalog-slider').data('royalSlider');
+    subcatalogSlider.ev.on('rsDragRelease', function(event) {
+        var el = $('.subcatalog-slider').find('.rsThumbs').eq(0).find('.rsThumbsContainer');
+        var el2 = $('.subcatalog-slider').find('.rsThumbs.add-thumbs').find('.rsThumbsContainer');
+        el2.attr('style', el.attr('style'));
+    });
 
 //    $.backstretch([
 //        "images/backs/meri.jpg",
