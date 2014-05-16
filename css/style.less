@@ -5,6 +5,8 @@
 @grid-width: 320px;
 @grid-el-offset: 47px;
 
+@trans_gray: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTdFQ0Q4RkRERDJCMTFFM0IyNzZEMDc3RjA0RENFODYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTdFQ0Q4RkVERDJCMTFFM0IyNzZEMDc3RjA0RENFODYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBN0VDRDhGQkREMkIxMUUzQjI3NkQwNzdGMDREQ0U4NiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBN0VDRDhGQ0REMkIxMUUzQjI3NkQwNzdGMDREQ0U4NiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PhiEUsoAAAAPSURBVHjaYmDnFYgDCDAAAMYAg40E9uQAAAAASUVORK5CYII=";
+
 
 * {
   .box-sizing;
@@ -55,14 +57,14 @@ body {
 /* Оформление ромбовидных блоков */
 .rhomb_block {
   .rotation(45deg);
-  background: rgba(17,21,23,.37);
+  background: url(@trans_gray);
   padding: 11.31px;
   margin: @grid-el-offset;
   z-index: 1;
   .inner_back {
     z-index: 2;
     position: relative;
-    background: rgba(17,21,23,.37);
+    background: url(@trans_gray);
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -203,7 +205,7 @@ header {
 }
 .site-page-catalog {
   height: 100%;
-  background: rgba(17,21,23,.37);
+  background: url(@trans_gray);
   h2 {
     color: #fff;
     font: italic 60px 'myriadpro-regular';
@@ -226,11 +228,11 @@ header {
     .rotation(-45deg);
     &>.rsOverflow {
       padding: 11.31px;
-      background: rgba(17,21,23,.37);
+      background: url(@trans_gray);
       height: 452.533px !important;
       &>.rsContainer {
         &>.rsSlide  {
-          background: rgba(17,21,23,.37);
+          background: url(@trans_gray);
           &>.rsContent {
             .rotation(45deg);
             text-align: center;
@@ -284,10 +286,10 @@ header {
       width: 175px;
       height: 175px;
       display: block;
-      background: rgba(17,21,23,.37);
+      background: url(@trans_gray);
       padding: 11.31px;
       .rsTmb {
-        background: rgba(17,21,23,.37);
+        background: url(@trans_gray);
         display: block;
         height: 100%;
         span {
@@ -323,19 +325,22 @@ header {
     margin-left: -(@grid-size*2)/2;
     &>.rsOverflow {
       padding: 10px;
-      background: rgba(17,21,23,.37);
+      background: url(@trans_gray);
       height: @grid-size*2 !important;
       &>.rsContainer {
         &>.rsSlide  {
-          background: rgba(17,21,23,.37);
+          background: url(@trans_gray);
           &>.rsContent {
             text-align: center;
             width: 100%;
             height: 100%;
             .head {
-              color: #fff;
-              height: 110px;
-              font: bold italic 60px/110px 'myriadpro-regular';
+              a {
+                color: #fff;
+                height: 110px;
+                font: bold italic 60px/110px 'myriadpro-regular';
+                text-decoration: none;
+              }
             }
             .image {
               text-align: center;
@@ -353,13 +358,19 @@ header {
               top: 200px;
               left: 50%;
               margin-left: -75px;
+              z-index: 5;
+              .opacity(0.7);
+              .transition();
+              &:hover {
+                .opacity(1);
+              }
             }
           }
         }
       }
     }
     &>.rsThumbs {
-      background: rgba(17,21,23,.37);
+      background: url(@trans_gray);
       position: absolute;
       top: 0;
       right: @grid-size*2;
@@ -370,7 +381,7 @@ header {
         height: @grid-width;
         padding: 10px;
         .rsTmb {
-          background: rgba(17,21,23,.37);
+          background: url(@trans_gray);
           width: 100%;
           height: 100%;
           .thumb-head {
@@ -398,6 +409,8 @@ header {
             top: 150px;
             left: 50%;
             margin-left: -43px;
+            z-index: 5;
+            .opacity(0.7);
           }
         }
       }

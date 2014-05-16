@@ -67,10 +67,10 @@ $(function(){
     $('.subcatalog-slider .left').click(function(){subcatalogSlider.prev()})
     $('.subcatalog-slider .right').click(function(){subcatalogSlider.next()})
 
-//    $.backstretch([
-//        "images/backs/meri.jpg",
-//        "images/backs/parma.jpg"
-//    ], {duration: 4000, fade: 1000});
+    $.backstretch([
+        "images/backs/meri.jpg",
+        "images/backs/parma.jpg"
+    ], {duration: 4000, fade: 1000});
 
 });
 
