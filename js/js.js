@@ -34,9 +34,8 @@ $(function(){
         });
 
     $('.catalog-slider').find('.rsThumbs').clone(true, true).addClass('add-thumbs').appendTo('.catalog-slider');
-
     var catalogSlider = $('.catalog-slider').data('royalSlider');
-    catalogSlider.ev.on('rsDragRelease', function(event) {
+    catalogSlider.ev.on('rsAfterSlideChange', function(event) {
         var el = $('.catalog-slider').find('.rsThumbs').eq(0).find('.rsThumbsContainer');
         var el2 = $('.catalog-slider').find('.rsThumbs.add-thumbs').find('.rsThumbsContainer');
         el2.attr('style', el.attr('style'));
@@ -54,16 +53,19 @@ $(function(){
                 arrows: false,
                 spacing: 0
             },
+            transitionSpeed: 400,
             slides: $('.subcatalog-slider .rsContent')
         });
     $('.subcatalog-slider').find('.rsThumbs').clone(true, true).addClass('add-thumbs').appendTo('.subcatalog-slider');
-
+    $('.subcatalog-slider').append('<div class="arrow left"></div><div class="arrow right"></div>');
     var subcatalogSlider = $('.subcatalog-slider').data('royalSlider');
-    subcatalogSlider.ev.on('rsDragRelease', function(event) {
+    subcatalogSlider.ev.on('rsAfterSlideChange', function(event) {
         var el = $('.subcatalog-slider').find('.rsThumbs').eq(0).find('.rsThumbsContainer');
         var el2 = $('.subcatalog-slider').find('.rsThumbs.add-thumbs').find('.rsThumbsContainer');
         el2.attr('style', el.attr('style'));
     });
+    $('.subcatalog-slider .left').click(function(){subcatalogSlider.prev()})
+    $('.subcatalog-slider .right').click(function(){subcatalogSlider.next()})
 
 //    $.backstretch([
 //        "images/backs/meri.jpg",
@@ -147,11 +149,11 @@ function initNavigation() {
 function openCatalogTwo() {
     $('.catalog-slider').on('click', '.link', function(){
         var slider = $('.catalog-slider'),
-            subslider = $('.subcatalog-slider');
+            subslider = $('.subcatalog-slider-wrapper');
             subcatalogId = $(this).attr('id');
 
         slider.find('.rsThumb').fadeOut(300);
-        slider.delay(400).animate({"transform": "rotate(0deg)"}, 400).fadeOut(400);
+        slider.delay(400).animate({"transform": "rotate(0deg)"}, 400).fadeOut(400).siblings('h2').fadeOut();
 
         subslider.delay(800).fadeIn(400)
     });
