@@ -439,3 +439,87 @@ header {
     }
   }
 }
+
+.site-page-salons {
+  .map-wrapper {
+    margin-top: 120px;
+    background: url(@trans_gray);
+    padding: 10px 0;
+    position: relative;
+    .head {
+      color: #fff;
+      text-align: center;
+      font: italic 60px 'myriadpro-regular';
+      position: absolute;
+      top: -80px;
+      left: 50%;
+      margin-left: -200px;
+      width: 400px;
+    }
+    .map-inner {
+      background: url(@trans_gray), url(@trans_gray);
+      padding: 25px 0;
+      .map {
+        position: relative;
+        width: 913px;
+        margin: 0 auto;
+      }
+    }
+    .city-list {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      width: 400px;
+      margin-left: 150px;
+      p {
+        color: #fff;
+        font: bold italic 22px 'myriadpro-regular';
+      }
+    }
+  }
+}
+
+.map .city {
+  border: 0 none;
+  left: 20px;
+  position: absolute;
+  top: 5px;
+  z-index: 1001;
+}
+.map .city img {
+  height: 7px;
+  width: 6px;
+}
+.map .city_img {
+  border: 0 none;
+  left: 20px;
+  position: absolute;
+  top: 5px;
+  z-index: 1;
+}
+.city_info {
+  display: none;
+  height: 70px;
+  margin: 0;
+  position: absolute;
+  width: 100px;
+  z-index: 1001;
+}
+.city_info .city_info_center {
+  background: url("../images/map/center_city_bg.png") repeat-x scroll left top rgba(0, 0, 0, 0);
+  height: 70px;
+  width: 100px;
+}
+.city_info .city_info_left {
+  background: url("../images/map/left_city_bg.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+  height: 70px;
+  width: 5px;
+}
+.city_info .city_info_right {
+  background: url("../images/map/right_city_bg.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+  height: 70px;
+  width: 20px;
+}
+.city_info table {
+  background: url("../images/map/city_tail.png") no-repeat scroll right bottom rgba(0, 0, 0, 0);
+}

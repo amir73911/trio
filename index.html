@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="css/reset.css"/>
     <link rel="stylesheet" href="css/royalslider.css"/>
+    <link rel="stylesheet" href="css/jquery.formstyler.css"/>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/fonts.css"/>
 
@@ -16,14 +17,14 @@
     <script src="js/jquery.backstretch.min.js"></script>
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script src="js/jquery.transform2d.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/jquery.formstyler.min.js"></script>
     <script src="js/js.js"></script>
 
     <title>ТРИО</title>
 </head>
 <body>
     <div class="window">
-
-
         <header>
             <div class="logo"><a href="#main" class="nav-link"></a></div>
         </header>
@@ -60,7 +61,7 @@
                                     <li><a href="#">Партнерам</a></li>
                                     <li><a href="#">О компании</a></li>
                                     <li><a href="#catalog" class="nav-link">Каталог</a></li>
-                                    <li><a href="#">Салоны</a></li>
+                                    <li><a href="#salons" class="nav-link">Салоны</a></li>
                                 </ul>
                                 <!--<ul>-->
                                     <!--<li><a href="images/temp_img/Catalog_product_1c_landscape_04.jpg">Партнерам</a></li>-->
@@ -221,6 +222,266 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+
+        </div>
+
+        <div id="salons" class="site-page site-page-salons">
+            <div class="map-wrapper">
+                <div class="head">Поиск салонов</div>
+                <div class="city-list">
+                    <p>Вы сейчас здесь:</p>
+                    <form action="#">
+                        <select>
+                            <option value="0">Ульяновск</option>
+                            <option value="1">Москва</option>
+                            <option value="2">Петрозаводск</option>
+                        </select>
+                        <input type="submit" value="Продолжить!"/>
+                    </form>
+                </div>
+                <div class="map-inner">
+                    <div class="map">
+                        <img class="map_img" src="images/map/map2.png">
+                        <div class="city_info">
+                            <table cellspacing="0" cellpadding="0" border="0"><tbody>
+                            <tr>
+                                <td class="city_info_left" style="border-image: none;"><img width="5" height="20" src="images/map/000.gif"></td>
+                                <td valign="top" class="city_info_center" style="border-image: none; width: auto;"><h1><nobr>г. Муром</nobr></h1></td>
+                                <td class="city_info_right" style="border-image: none;"><img width="20" height="20" src="images/map/000.gif"></td>
+                            </tr>
+                            </tbody></table>
+                        </div>
+                        <div class="points">
+                        <a alt="Адыгея" style="top:516px; left:105px; width:6px; height:6px;" id="city_href_86" class="city" rel="86"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:516px; left:105px;" class="city_img" src="images/map/city.png">
+                        <a alt="Алтайский край" style="top:455px; left:334px; width:6px; height:6px;" id="city_href_1" class="city" rel="1"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:455px; left:334px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Альметьевск" style="top:435px; left:172px; width:6px; height:6px;" id="city_href_45" class="city" rel="45"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:435px; left:172px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Анапа" style="top:505px; left:97px; width:6px; height:6px;" id="city_href_103" class="city" rel="103"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:505px; left:97px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Ангарск" style="top:455px; left:446px; width:6px; height:6px;" id="city_href_7" class="city" rel="7"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:455px; left:446px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Архангельск" style="top:333px; left:109px; width:6px; height:6px;" id="city_href_91" class="city" rel="91"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:333px; left:109px;" class="city_img" src="images/map/city.png">
+                        <a alt="Архангельская область" style="top:334px; left:110px; width:6px; height:6px;" id="city_href_92" class="city" rel="92"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:334px; left:110px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Балаково" style="top:460px; left:147px; width:6px; height:6px;" id="city_href_70" class="city" rel="70"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:460px; left:147px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Бердск" style="top:435px; left:336px; width:6px; height:6px;" id="city_href_76" class="city" rel="76"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:435px; left:336px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Березники" style="top:389px; left:196px; width:6px; height:6px;" id="city_href_77" class="city" rel="77"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:389px; left:196px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Бийск" style="top:456px; left:350px; width:6px; height:6px;" id="city_href_4" class="city" rel="4"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:456px; left:350px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Бугульма" style="top:436px; left:175px; width:6px; height:6px;" id="city_href_44" class="city" rel="44"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:436px; left:175px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Бузулук" style="top:453px; left:174px; width:6px; height:6px;" id="city_href_60" class="city" rel="60"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:453px; left:174px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Великий Устюг" style="top:375px; left:139px; width:6px; height:6px;" id="city_href_99" class="city" rel="99"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:375px; left:139px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Владимир" style="top:422px; left:105px; width:6px; height:6px;" id="city_href_24" class="city" rel="24"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:422px; left:105px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Волгоград" style="top:488px; left:129px; width:6px; height:6px;" id="city_href_87" class="city" rel="87"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:488px; left:129px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Волгодонск" style="top:480px; left:89px; width:6px; height:6px;" id="city_href_83" class="city" rel="83"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:480px; left:89px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Волжск" style="top:422px; left:154px; width:6px; height:6px;" id="city_href_65" class="city" rel="65"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:422px; left:154px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Воркута" style="top:291px; left:232px; width:6px; height:6px;" id="city_href_89" class="city" rel="89"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:291px; left:232px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Воскресенск" style="top:429px; left:97px; width:6px; height:6px;" id="city_href_38" class="city" rel="38"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:429px; left:97px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Вязьма" style="top:431px; left:74px; width:6px; height:6px;" id="city_href_20" class="city" rel="20"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:431px; left:74px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Геленджик" style="top:519px; left:96px; width:6px; height:6px;" id="city_href_81" class="city" rel="81"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:519px; left:96px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Горно-Алтайск" style="top:460px; left:351px; width:6px; height:6px;" id="city_href_11" class="city" rel="11"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:460px; left:351px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Долинск" style="top:500px; left:655px; width:6px; height:6px;" id="city_href_123" class="city" rel="123"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:500px; left:655px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Заинск" style="top:429px; left:166px; width:6px; height:6px;" id="city_href_50" class="city" rel="50"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:429px; left:166px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Зеленодольск" style="top:431px; left:170px; width:6px; height:6px;" id="city_href_49" class="city" rel="49"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:431px; left:170px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Иваново" style="top:416px; left:108px; width:6px; height:6px;" id="city_href_106" class="city" rel="106"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:416px; left:108px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Ижевск" style="top:416px; left:176px; width:6px; height:6px;" id="city_href_63" class="city" rel="63"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:416px; left:176px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Иркутск" style="top:457px; left:452px; width:6px; height:6px;" id="city_href_6" class="city" rel="6"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:457px; left:452px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Йошкар-Ола" style="top:417px; left:147px; width:6px; height:6px;" id="city_href_67" class="city" rel="67"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:417px; left:147px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Казань" style="top:426px; left:152px; width:6px; height:6px;" id="city_href_66" class="city" rel="66"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:426px; left:152px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Калуга" style="top:425px; left:85px; width:6px; height:6px;" id="city_href_109" class="city" rel="109"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:425px; left:85px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Кинель" style="top:451px; left:169px; width:6px; height:6px;" id="city_href_33" class="city" rel="33"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:451px; left:169px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Киров" style="top:399px; left:156px; width:6px; height:6px;" id="city_href_68" class="city" rel="68"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:399px; left:156px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Ковров" style="top:419px; left:113px; width:6px; height:6px;" id="city_href_25" class="city" rel="25"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:419px; left:113px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Конаково" style="top:416px; left:87px; width:6px; height:6px;" id="city_href_22" class="city" rel="22"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:416px; left:87px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Копейск" style="top:436px; left:224px; width:6px; height:6px;" id="city_href_34" class="city" rel="34"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:436px; left:224px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Краснодар" style="top:515px; left:100px; width:6px; height:6px;" id="city_href_84" class="city" rel="84"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:515px; left:100px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Красноярск" style="top:427px; left:384px; width:6px; height:6px;" id="city_href_116" class="city" rel="116"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:427px; left:384px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Курган" style="top:428px; left:240px; width:6px; height:6px;" id="city_href_13" class="city" rel="13"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:428px; left:240px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Курск" style="top:460px; left:82px; width:6px; height:6px;" id="city_href_29" class="city" rel="29"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:460px; left:82px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Курчатов" style="top:460px; left:82px; width:6px; height:6px;" id="city_href_30" class="city" rel="30"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:460px; left:82px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Кыштым" style="top:424px; left:215px; width:6px; height:6px;" id="city_href_12" class="city" rel="12"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:424px; left:215px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Лениногорск" style="top:437px; left:171px; width:6px; height:6px;" id="city_href_41" class="city" rel="41"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:437px; left:171px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Липецк" style="top:454px; left:100px; width:6px; height:6px;" id="city_href_27" class="city" rel="27"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:454px; left:100px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Магнитогорск" style="top:447px; left:207px; width:6px; height:6px;" id="city_href_14" class="city" rel="14"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:447px; left:207px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Малоярославец" style="top:432px; left:86px; width:6px; height:6px;" id="city_href_31" class="city" rel="31"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:432px; left:86px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Махачкала" style="top:528px; left:145px; width:6px; height:6px;" id="city_href_102" class="city" rel="102"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:528px; left:145px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Менделеевск" style="top:426px; left:172px; width:6px; height:6px;" id="city_href_47" class="city" rel="47"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:426px; left:172px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Москва" style="top:425px; left:91px; width:6px; height:6px;" id="city_href_39" class="city" rel="39"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:425px; left:91px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Мурманск" style="top:271px; left:67px; width:6px; height:6px;" id="city_href_94" class="city" rel="94"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:271px; left:67px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Муром" style="top:427px; left:116px; width:6px; height:6px;" id="city_href_21" class="city" rel="21"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:427px; left:116px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Набережные Челны" style="top:428px; left:173px; width:6px; height:6px;" id="city_href_46" class="city" rel="46"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:428px; left:173px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Находка" style="top:528px; left:605px; width:6px; height:6px;" id="city_href_2" class="city" rel="2"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:528px; left:605px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Нефтекамск" style="top:423px; left:183px; width:6px; height:6px;" id="city_href_61" class="city" rel="61"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:423px; left:183px;" class="city_img" src="images/map/city.png">
+                        <a alt="Нижегородская область" style="top:421px; left:127px; width:6px; height:6px;" id="city_href_74" class="city" rel="74"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:421px; left:127px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Нижневартовск" style="top:372px; left:209px; width:6px; height:6px;" id="city_href_19" class="city" rel="19"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:372px; left:209px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Нижнекамск" style="top:425px; left:171px; width:6px; height:6px;" id="city_href_48" class="city" rel="48"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:425px; left:171px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Нижний Новгород" style="top:421px; left:127px; width:6px; height:6px;" id="city_href_73" class="city" rel="73"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:421px; left:127px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Новокуйбышевск" style="top:446px; left:159px; width:6px; height:6px;" id="city_href_52" class="city" rel="52"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:446px; left:159px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Новороссийск" style="top:513px; left:93px; width:6px; height:6px;" id="city_href_80" class="city" rel="80"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:513px; left:93px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Новосибирск" style="top:433px; left:334px; width:6px; height:6px;" id="city_href_9" class="city" rel="9"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:433px; left:334px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Новоуральск" style="top:411px; left:216px; width:6px; height:6px;" id="city_href_36" class="city" rel="36"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:411px; left:216px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Обнинск" style="top:431px; left:91px; width:6px; height:6px;" id="city_href_43" class="city" rel="43"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:431px; left:91px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Озерск" style="top:437px; left:8px; width:6px; height:6px;" id="city_href_100" class="city" rel="100"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:437px; left:8px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Октябрьский" style="top:437px; left:78px; width:6px; height:6px;" id="city_href_42" class="city" rel="42"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:437px; left:78px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Омск" style="top:433px; left:290px; width:6px; height:6px;" id="city_href_104" class="city" rel="104"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:433px; left:290px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Орел" style="top:451px; left:83px; width:6px; height:6px;" id="city_href_28" class="city" rel="28"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:451px; left:83px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Оренбург" style="top:462px; left:186px; width:6px; height:6px;" id="city_href_55" class="city" rel="55"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:462px; left:186px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Орск" style="top:465px; left:204px; width:6px; height:6px;" id="city_href_69" class="city" rel="69"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:465px; left:204px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Пенза" style="top:449px; left:133px; width:6px; height:6px;" id="city_href_125" class="city" rel="125"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:449px; left:133px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Первоуральск " style="top:414px; left:210px; width:6px; height:6px;" id="city_href_17" class="city" rel="17"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:414px; left:210px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Пермь " style="top:402px; left:192px; width:6px; height:6px;" id="city_href_57" class="city" rel="57"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:402px; left:192px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Петропавловск-Камчатский" style="top:455px; left:737px; width:6px; height:6px;" id="city_href_3" class="city" rel="3"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:455px; left:737px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Печора" style="top:321px; left:198px; width:6px; height:6px;" id="city_href_96" class="city" rel="96"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:321px; left:198px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Поронайск" style="top:482px; left:658px; width:6px; height:6px;" id="city_href_124" class="city" rel="124"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:482px; left:658px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Ростов-на-Дону" style="top:499px; left:103px; width:6px; height:6px;" id="city_href_82" class="city" rel="82"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:499px; left:103px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Рязань" style="top:430px; left:100px; width:6px; height:6px;" id="city_href_105" class="city" rel="105"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:430px; left:100px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Самара" style="top:449px; left:163px; width:6px; height:6px;" id="city_href_51" class="city" rel="51"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:449px; left:163px;" class="city_img" src="images/map/city.png">
+                        <a alt="Самарская область" style="top:440px; left:160px; width:6px; height:6px;" id="city_href_101" class="city" rel="101"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:440px; left:160px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Санкт-Петербург" style="top:381px; left:46px; width:6px; height:6px;" id="city_href_95" class="city" rel="95"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:381px; left:46px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Саранск" style="top:441px; left:133px; width:6px; height:6px;" id="city_href_59" class="city" rel="59"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:441px; left:133px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Саратов" style="top:464px; left:137px; width:6px; height:6px;" id="city_href_71" class="city" rel="71"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:464px; left:137px;" class="city_img" src="images/map/city.png">
+                        <a alt="Саратовская область" style="top:466px; left:143px; width:6px; height:6px;" id="city_href_72" class="city" rel="72"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:466px; left:143px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Саров" style="top:436px; left:128px; width:6px; height:6px;" id="city_href_40" class="city" rel="40"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:436px; left:128px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Северодвинск" style="top:333px; left:101px; width:6px; height:6px;" id="city_href_93" class="city" rel="93"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:333px; left:101px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Североморск" style="top:266px; left:68px; width:6px; height:6px;" id="city_href_88" class="city" rel="88"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:266px; left:68px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Славгород" style="top:451px; left:312px; width:6px; height:6px;" id="city_href_5" class="city" rel="5"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:451px; left:312px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Слюдянка" style="top:463px; left:446px; width:6px; height:6px;" id="city_href_8" class="city" rel="8"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:463px; left:446px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Смоленск" style="top:437px; left:65px; width:6px; height:6px;" id="city_href_111" class="city" rel="111"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:437px; left:65px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Соликамск " style="top:387px; left:193px; width:6px; height:6px;" id="city_href_75" class="city" rel="75"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:387px; left:193px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Сочи " style="top:524px; left:104px; width:6px; height:6px;" id="city_href_85" class="city" rel="85"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:524px; left:104px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Стрежевой" style="top:377px; left:306px; width:6px; height:6px;" id="city_href_10" class="city" rel="10"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:377px; left:306px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Сызрань" style="top:449px; left:149px; width:6px; height:6px;" id="city_href_64" class="city" rel="64"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:449px; left:149px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Сыктывкар" style="top:364px; left:163px; width:6px; height:6px;" id="city_href_98" class="city" rel="98"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:364px; left:163px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Таганрог" style="top:497px; left:97px; width:6px; height:6px;" id="city_href_32" class="city" rel="32"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:497px; left:97px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Тамбов" style="top:454px; left:112px; width:6px; height:6px;" id="city_href_26" class="city" rel="26"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:454px; left:112px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Тверь" style="top:415px; left:82px; width:6px; height:6px;" id="city_href_23" class="city" rel="23"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:415px; left:82px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Тобольск" style="top:402px; left:254px; width:6px; height:6px;" id="city_href_18" class="city" rel="18"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:402px; left:254px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Тольятти" style="top:446px; left:154px; width:6px; height:6px;" id="city_href_53" class="city" rel="53"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:446px; left:154px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Тула" style="top:420px; left:65px; width:6px; height:6px;" id="city_href_110" class="city" rel="110"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:420px; left:65px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Ульяновск" style="top:439px; left:148px; width:6px; height:6px;" id="city_href_78" class="city" rel="78"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:439px; left:148px;" class="city_img" src="images/map/city.png">
+                        <a alt="Ульяновская область" style="top:439px; left:151px; width:6px; height:6px;" id="city_href_79" class="city" rel="79"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:439px; left:151px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Уфа" style="top:435px; left:191px; width:6px; height:6px;" id="city_href_56" class="city" rel="56"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:435px; left:191px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Ухта" style="top:343px; left:180px; width:6px; height:6px;" id="city_href_97" class="city" rel="97"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:343px; left:180px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Чайковский" style="top:416px; left:180px; width:6px; height:6px;" id="city_href_58" class="city" rel="58"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:416px; left:180px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Чапаевск" style="top:451px; left:158px; width:6px; height:6px;" id="city_href_54" class="city" rel="54"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:451px; left:158px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Челябинск" style="top:433px; left:218px; width:6px; height:6px;" id="city_href_15" class="city" rel="15"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:433px; left:218px;" class="city_img" src="images/map/city.png">
+                        <a alt="Челябинская область" style="top:433px; left:220px; width:6px; height:6px;" id="city_href_16" class="city" rel="16"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:433px; left:220px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Южно-Сахалинск" style="top:503px; left:655px; width:6px; height:6px;" id="city_href_122" class="city" rel="122"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:503px; left:655px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Южноуральск" style="top:447px; left:212px; width:6px; height:6px;" id="city_href_107" class="city" rel="107"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:447px; left:212px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Якутск" style="top:380px; left:612px; width:6px; height:6px;" id="city_href_108" class="city" rel="108"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:380px; left:612px;" class="city_img" src="images/map/city.png">
+                        <a alt="г. Янаул" style="top:420px; left:186px; width:6px; height:6px;" id="city_href_62" class="city" rel="62"><img width="6" height="6" style="width:6px; height:6px;" src="images/map/000.gif"></a>
+                        <img style="top:420px; left:186px;" class="city_img" src="images/map/city.png">
+                        </div>
+                    </div>
                 </div>
             </div>
 

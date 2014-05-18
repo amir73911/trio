@@ -7,6 +7,8 @@ $(function(){
     mainNavAnimate(); /* Главное меню */
     openCatalogTwo(); /* Открытие подкаталога */
 
+    $('select').styler();
+
     $(".actions-slider").royalSlider({
         imageScaleMode: "none",
         slidesSpacing: 0,
@@ -171,6 +173,9 @@ function openCatalogTwo() {
                 case 'catalog':
                     $('.site-page-catalog').delay(300).fadeIn(200).addClass('active');
                     break;
+                case 'salons':
+                    $('.site-page-salons').delay(300).fadeIn(200).addClass('active');
+                    break;
             }
         },
         close : function(page) {
@@ -181,7 +186,9 @@ function openCatalogTwo() {
                     break;
                 case 'catalog':
                     $('.site-page-catalog').fadeOut(200);
-                    $('.site-page-main').delay(200).fadeOut(200);
+                    break;
+                case 'salons':
+                    $('.site-page-salons').fadeOut(200);
                     break;
             }
         }
