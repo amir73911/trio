@@ -91,6 +91,16 @@ $(function(){
         el2.attr('style', el.attr('style'));
     });
 
+    /* Слайдер изображений салона*/
+    $('.salon-images-slider')
+        .royalSlider({
+            loop: true,
+            imageScaleMode: "none",
+            imageAlignCenter: false,
+            controlNavigation: 'none',
+            arrowsNavAutoHide: false
+        });
+
 //    $.backstretch([
 //        "images/backs/meri.jpg",
 //        "images/backs/parma.jpg"
