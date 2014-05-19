@@ -22,6 +22,32 @@ body {
   min-height: @grid-width*2;
 }
 
+h2 {
+  color: #fff;
+  font: italic 60px 'myriadpro-regular';
+}
+
+.clear {
+  clear: both;
+}
+
+.float-right {
+  float: right;
+}
+
+input.btn {
+  background: url("../images/btn_back.png") center center no-repeat;
+  background-size: contain;
+  color: #fff;
+  font: 16px 'myriadpro-regular';
+  border: 0;
+  cursor: pointer;
+  padding: 6px 22px;
+  position: relative;
+  min-width: 97px;
+  max-width: 200px;
+}
+
 /* Окно (страница) */
 .window {
   position: relative;
@@ -206,10 +232,6 @@ header {
 .site-page-catalog {
   height: 100%;
   background: url(@trans_gray);
-  h2 {
-    color: #fff;
-    font: italic 60px 'myriadpro-regular';
-  }
 }
 
 .catalog-slider-wrapper {
@@ -463,6 +485,51 @@ header {
         position: relative;
         width: 913px;
         margin: 0 auto;
+        .city {
+          border: 0 none;
+          left: 20px;
+          position: absolute;
+          top: 5px;
+          z-index: 1001;
+          img {
+            height: 7px;
+            width: 6px;
+          }
+        }
+        .city_img {
+          border: 0 none;
+          left: 20px;
+          position: absolute;
+          top: 5px;
+          z-index: 1;
+        }
+      }
+      .city_info {
+        display: none;
+        height: 70px;
+        margin: 0;
+        position: absolute;
+        width: 100px;
+        z-index: 1001;
+        .city_info_center {
+          background: url("../images/map/center_city_bg.png") repeat-x scroll left top rgba(0, 0, 0, 0);
+          height: 70px;
+          width: 100px;
+          padding: 0 5px 0 10px;
+        }
+        .city_info_left {
+          background: url("../images/map/left_city_bg.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+          height: 70px;
+          width: 5px;
+        }
+        .city_info_right {
+          background: url("../images/map/right_city_bg.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+          height: 70px;
+          width: 20px;
+        }
+        table {
+          background: url("../images/map/city_tail.png") no-repeat scroll right bottom rgba(0, 0, 0, 0);
+        }
       }
     }
     .city-list {
@@ -471,55 +538,125 @@ header {
       left: 50%;
       width: 400px;
       margin-left: 150px;
+      z-index: 10;
       p {
         color: #fff;
         font: bold italic 22px 'myriadpro-regular';
+      }
+      .jq-selectbox {
+        margin: 10px 0 15px;
       }
     }
   }
 }
 
-.map .city {
-  border: 0 none;
-  left: 20px;
-  position: absolute;
-  top: 5px;
-  z-index: 1001;
+.site-page-salons {
+  height: 100%;
+  background: url(@trans_gray);
 }
-.map .city img {
-  height: 7px;
-  width: 6px;
-}
-.map .city_img {
-  border: 0 none;
-  left: 20px;
-  position: absolute;
-  top: 5px;
-  z-index: 1;
-}
-.city_info {
-  display: none;
-  height: 70px;
-  margin: 0;
-  position: absolute;
-  width: 100px;
-  z-index: 1001;
-}
-.city_info .city_info_center {
-  background: url("../images/map/center_city_bg.png") repeat-x scroll left top rgba(0, 0, 0, 0);
-  height: 70px;
-  width: 100px;
-}
-.city_info .city_info_left {
-  background: url("../images/map/left_city_bg.png") no-repeat scroll left top rgba(0, 0, 0, 0);
-  height: 70px;
-  width: 5px;
-}
-.city_info .city_info_right {
-  background: url("../images/map/right_city_bg.png") no-repeat scroll left top rgba(0, 0, 0, 0);
-  height: 70px;
-  width: 20px;
-}
-.city_info table {
-  background: url("../images/map/city_tail.png") no-repeat scroll right bottom rgba(0, 0, 0, 0);
+.salons-slider-wrapper {
+  .head {
+    position: absolute;
+    top: 175px;
+    left: 20%;
+    width: 225px;
+    .town {
+      color: #fff;
+      font: bold italic 22px 'myriadpro-regular';
+      margin-bottom: 10px;
+    }
+    .other_town_link {
+      color: #e31e24;
+      font: 14px 'myriadpro-regular';
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+  .salons-slider {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    width: @grid-size*2;
+    height: @grid-size*2;
+    margin-left: -(@grid-size*2)/2;
+    .rotation(-45deg);
+    &>.rsOverflow {
+      padding: 11.31px;
+      background: url(@trans_gray);
+      height: 452.533px !important;
+      &>.rsContainer {
+        &>.rsSlide  {
+          background: url(@trans_gray);
+          &>.rsContent {
+            .rotation(45deg);
+            text-align: center;
+            padding-top: 55px;
+            width: 100%;
+            height: 100%;
+            .slide-head {
+              color: #fff;
+              font: bold italic 60px 'myriadpro-regular';
+            }
+            .salons-content-slider {
+              height: 150px;
+              margin: 19px 0 35px -91px;
+            }
+            .caption {
+              color: #fff;
+              font: italic 16px/24px 'myriadpro-regular';
+            }
+            .link {
+              display: block;
+              background: url("../images/catalog_link.png");
+              width: 86px;
+              height: 86px;
+              position: absolute;
+              bottom: -89px;
+              left: 50%;
+              margin-left: -43px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+  .add-thumbs {
+    position: absolute;
+    top: auto !important;
+    left: auto !important;
+    bottom: 0 !important;
+    right: -175px !important;
+    height: 175px;
+    width: 175px;
+  }
+  .rsThumbs {
+    position: absolute;
+    top: 0;
+    left: -175px;
+    height: 175px;
+    width: 175px;
+    .rsThumb {
+      width: 175px;
+      height: 175px;
+      display: block;
+      background: url(@trans_gray);
+      padding: 11.31px;
+      .rsTmb {
+        background: url(@trans_gray);
+        display: block;
+        height: 100%;
+        span {
+          font: bold 30px 'myriadpro-regular';
+          font-style: italic;
+          color: #fff;
+          display: block;
+          text-align: center;
+          .rotation(45deg);
+          width: 194px;
+          padding-top: 68px;
+        }
+      }
+    }
+  }
 }

@@ -66,13 +66,35 @@ $(function(){
         var el2 = $('.subcatalog-slider').find('.rsThumbs.add-thumbs').find('.rsThumbsContainer');
         el2.attr('style', el.attr('style'));
     });
-    $('.subcatalog-slider .left').click(function(){subcatalogSlider.prev()})
-    $('.subcatalog-slider .right').click(function(){subcatalogSlider.next()})
+    $('.subcatalog-slider .left').click(function(){subcatalogSlider.prev()});
+    $('.subcatalog-slider .right').click(function(){subcatalogSlider.next()});
 
-    $.backstretch([
-        "images/backs/meri.jpg",
-        "images/backs/parma.jpg"
-    ], {duration: 4000, fade: 1000});
+    /* Слайдер салонов */
+    $('.salons-slider')
+        .royalSlider({
+            controlNavigation: 'thumbnails',
+            arrowsNav: false,
+            navigateByClick: false,
+            controlNavThumbsNavigation: false,
+            loop: true,
+            thumbs: {
+                arrows: false,
+                spacing: 0
+            },
+            slides: $('.salons-slider .rsContent')
+        });
+    $('.salons-slider').find('.rsThumbs').clone(true, true).addClass('add-thumbs').appendTo('.salons-slider');
+    var catalogSlider = $('.salons-slider').data('royalSlider');
+    catalogSlider.ev.on('rsAfterSlideChange', function(event) {
+        var el = $('.salons-slider').find('.rsThumbs').eq(0).find('.rsThumbsContainer');
+        var el2 = $('.salons-slider').find('.rsThumbs.add-thumbs').find('.rsThumbsContainer');
+        el2.attr('style', el.attr('style'));
+    });
+
+//    $.backstretch([
+//        "images/backs/meri.jpg",
+//        "images/backs/parma.jpg"
+//    ], {duration: 4000, fade: 1000});
 
 });
 
@@ -133,7 +155,7 @@ function mainNavAnimate() {
 
 
 function initNavigation() {
-    $.fn.navigation('show', 'main');  //первый запуск
+    $.fn.navigation('show', 'salons');  //первый запуск
 
     $('.nav-link').click(function(event){
         var href = event.target.hash,
