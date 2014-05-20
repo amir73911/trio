@@ -1314,8 +1314,7 @@ $(document).ready(function(){
     content[126] = text;
 
     function show_city(id_city) {
-        _gaq.push(['_trackEvent', 'customer', 'where', 'anyone']);
-        yaCounter11791606.reachGoal('wherebuy');
+        //_gaq.push(['_trackEvent', 'customer', 'where', 'anyone']);
         var left = parseInt($('#city_href_' + id_city).css('left'));
         var top = parseInt($('#city_href_' + id_city).css('top'));
         if (top > 0 && left > 0) {
@@ -1325,7 +1324,7 @@ $(document).ready(function(){
             $('.scroll-pane').css('width', '255px');
             $('.scroll-pane').html(content[id_city]);
             $('.shop_content h1').html(citys[id_city]);
-            $('.scroll-pane').jScrollPane({showArrows:false, scrollbarWidth:29, dragMinHeight:73, dragMaxHeight:73});
+            //$('.scroll-pane').jScrollPane({showArrows:false, scrollbarWidth:29, dragMinHeight:73, dragMaxHeight:73});
             if ($('.scroll-pane').css('height') != "auto") {
                 $('.shop_content').addClass('shop_content_min');
                 $('.jScrollPaneContainer').css('height', '135px');
@@ -1345,7 +1344,7 @@ $(document).ready(function(){
                     $('#tail').removeClass('left_tail');
                 }
                 top = (top - 273) + 'px';
-                $('.scroll-pane').jScrollPane({showArrows:false, scrollbarWidth:29, dragMinHeight:73, dragMaxHeight:73});
+                //$('.scroll-pane').jScrollPane({showArrows:false, scrollbarWidth:29, dragMinHeight:73, dragMaxHeight:73});
             }
             else {
                 $('.shop_content').removeClass('shop_content_min');
@@ -1366,7 +1365,7 @@ $(document).ready(function(){
                     $('#tail').removeClass('left_tail');
                 }
                 top = (top - 371) + 'px';
-                $('.scroll-pane').jScrollPane({showArrows:false, scrollbarWidth:29, dragMinHeight:73, dragMaxHeight:73});
+                //$('.scroll-pane').jScrollPane({showArrows:false, scrollbarWidth:29, dragMinHeight:73, dragMaxHeight:73});
             }
             $('.shop_info').css('left', left);
             $('.shop_info').css('top', top);

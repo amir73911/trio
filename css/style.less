@@ -501,7 +501,30 @@ header {
           left: 20px;
           position: absolute;
           top: 5px;
-          z-index: 1;
+          z-index: 10;
+        }
+        .points {
+          a {
+            display: block;
+            width: 6px;
+            height: 6px;
+            cursor: pointer;
+            background: url("../images/map/city.png") center center no-repeat;
+            z-index: 5;
+            &.selected {
+              &:before {
+                content: "";
+                display: block;
+                background: url("../images/point.png");
+                width: 21px;
+                height: 35px;
+                position: absolute;
+                top: -35px;
+                left: 50%;
+                margin-left: -10px;
+              }
+            }
+          }
         }
       }
       .city_info {
@@ -555,6 +578,7 @@ header {
   background: url(@trans_gray);
 }
 .salons-slider-wrapper {
+  display: none;
   .head {
     position: absolute;
     top: 175px;
@@ -766,6 +790,7 @@ header {
 }
 
 .salon-images-slider-wrapper {
+  display: none;
   position: absolute;
   top: 100px;
   left: 50%;

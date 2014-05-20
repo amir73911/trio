@@ -517,7 +517,26 @@ header .logo a {
   left: 20px;
   position: absolute;
   top: 5px;
-  z-index: 1;
+  z-index: 10;
+}
+.site-page-salons .map-wrapper .map-inner .map .points a {
+  display: block;
+  width: 6px;
+  height: 6px;
+  cursor: pointer;
+  background: url("../images/map/city.png") center center no-repeat;
+  z-index: 5;
+}
+.site-page-salons .map-wrapper .map-inner .map .points a.selected:before {
+  content: "";
+  display: block;
+  background: url("../images/point.png");
+  width: 21px;
+  height: 35px;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  margin-left: -10px;
 }
 .site-page-salons .map-wrapper .map-inner .city_info {
   display: none;
@@ -564,6 +583,9 @@ header .logo a {
 .site-page-salons {
   height: 100%;
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTdFQ0Q4RkRERDJCMTFFM0IyNzZEMDc3RjA0RENFODYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTdFQ0Q4RkVERDJCMTFFM0IyNzZEMDc3RjA0RENFODYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBN0VDRDhGQkREMkIxMUUzQjI3NkQwNzdGMDREQ0U4NiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBN0VDRDhGQ0REMkIxMUUzQjI3NkQwNzdGMDREQ0U4NiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PhiEUsoAAAAPSURBVHjaYmDnFYgDCDAAAMYAg40E9uQAAAAASUVORK5CYII=");
+}
+.salons-slider-wrapper {
+  display: none;
 }
 .salons-slider-wrapper .head {
   position: absolute;
@@ -786,6 +808,7 @@ header .logo a {
   padding-top: 68px;
 }
 .salon-images-slider-wrapper {
+  display: none;
   position: absolute;
   top: 100px;
   left: 50%;

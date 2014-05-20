@@ -6,6 +6,7 @@ $(function(){
 
     mainNavAnimate(); /* Главное меню */
     openCatalogTwo(); /* Открытие подкаталога */
+    salonsWork(); /* Открытие подкаталога */
 
     $('select').styler();
 
@@ -190,6 +191,42 @@ function openCatalogTwo() {
         slider.delay(400).animate({"transform": "rotate(0deg)"}, 400).fadeOut(400).siblings('h2').fadeOut();
 
         subslider.delay(800).fadeIn(400)
+    });
+}
+
+function salonsWork() {
+    var city_list = $('.city-list select'),
+        start_selected_town = city_list.find('option:selected').text(),
+        points = $('.site-page-salons .points a'),
+        start_point = $('.site-page-salons .points a[alt="'+start_selected_town+'"]').addClass('selected'),
+        options_str = '';
+
+    points.each(function(){
+        var town = $(this).attr('alt');
+        options_str+='<option val="'+town+'">'+town+'</option>';
+    });
+    city_list.append(options_str);
+
+    city_list.change(function(){
+        var current_town = $(this).find('option:selected').text(),
+            point = $('.site-page-salons .points a[alt="'+current_town+'"]');
+
+        points.removeClass('selected');
+        point.addClass('selected');
+    });
+
+    city_list.change();
+
+    points.click(function(){
+        var town = $(this).attr('alt'),
+            options = city_list.find('option'),
+            selected_option = city_list.find('option[val="'+town+'"]');
+
+        options.removeAttr('selected');
+        selected_option.attr('selected', 'selected');
+
+        city_list.trigger('refresh').change();
+
     });
 }
 
