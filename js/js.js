@@ -102,10 +102,10 @@ $(function(){
             arrowsNavAutoHide: false
         });
 
-//    $.backstretch([
-//        "images/backs/meri.jpg",
-//        "images/backs/parma.jpg"
-//    ], {duration: 4000, fade: 1000});
+    $.backstretch([
+        "images/backs/meri.jpg",
+        "images/backs/parma.jpg"
+    ], {duration: 4000, fade: 1000});
 
 });
 
@@ -273,12 +273,15 @@ function salonsWork() {
                 case 'main':
                     $('.site-page-main').fadeIn(200).addClass('active');
                     $('.site-page-main .draggable').delay(200).fadeIn(200);
+                    if ($('.main_nav').hasClass('active')) {$('.main_nav').fadeOut(200).removeClass('active');}
                     break;
                 case 'catalog':
                     $('.site-page-catalog').delay(300).fadeIn(200).addClass('active');
+                    if (!$('.main_nav').hasClass('active')) {$('.main_nav').delay(300).fadeIn(200).addClass('active');}
                     break;
                 case 'salons':
                     $('.site-page-salons').delay(300).fadeIn(200).addClass('active');
+                    if (!$('.main_nav').hasClass('active')) {$('.main_nav').delay(300).fadeIn(200).addClass('active');}
                     break;
             }
         },

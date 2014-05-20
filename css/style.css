@@ -134,6 +134,7 @@ nav.small_nav ul li a {
   font: 18px 'myriadpro-regular';
 }
 nav.main_nav {
+  display: none;
   position: absolute;
   top: 31px;
   left: 459px;
