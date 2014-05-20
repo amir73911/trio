@@ -182,10 +182,19 @@ function initNavigation() {
 }
 
 function openCatalogTwo() {
+    var slider = $('.catalog-slider'),
+        subslider = $('.subcatalog-slider-wrapper');
+
+
+    subslider.find('.back_link').click(function(){
+        subslider.fadeOut(600);
+        slider.delay(200).fadeIn(400).animate({"transform": "rotate(-45deg)"}, 400);
+        slider.find('.rsThumb').delay(1000).fadeIn(300);
+        slider.siblings('h2').delay(1000).fadeIn();
+    });
+
     $('.catalog-slider').on('click', '.link', function(){
-        var slider = $('.catalog-slider'),
-            subslider = $('.subcatalog-slider-wrapper');
-            subcatalogId = $(this).attr('id');
+        var subcatalogId = $(this).attr('id');
 
         slider.find('.rsThumb').fadeOut(300);
         slider.delay(400).animate({"transform": "rotate(0deg)"}, 400).fadeOut(400).siblings('h2').fadeOut();
