@@ -196,17 +196,21 @@ function openCatalogTwo() {
 
 function salonsWork() {
     var city_list = $('.city-list select'),
+        city_select_btn = $('.city-list .btn'),
         start_selected_town = city_list.find('option:selected').text(),
         points = $('.site-page-salons .points a'),
         start_point = $('.site-page-salons .points a[alt="'+start_selected_town+'"]').addClass('selected'),
         options_str = '';
 
+    // создаём набор option для селекта с городами
     points.each(function(){
-        var town = $(this).attr('alt');
-        options_str+='<option val="'+town+'">'+town+'</option>';
+        var town = $(this).attr('alt'),
+            id = $(this).attr('id');
+        options_str+='<option value="'+id+'">'+town+'</option>';
     });
     city_list.append(options_str);
 
+    // при выборе города в селекте на карте обозначается выделенный город
     city_list.change(function(){
         var current_town = $(this).find('option:selected').text(),
             point = $('.site-page-salons .points a[alt="'+current_town+'"]');
@@ -214,19 +218,30 @@ function salonsWork() {
         points.removeClass('selected');
         point.addClass('selected');
     });
-
+    // инициализация при загрузке
     city_list.change();
 
+    // при клике на город на карте в селекте выбирается выбранный город
     points.click(function(){
         var town = $(this).attr('alt'),
+            id = $(this).attr('id'),
             options = city_list.find('option'),
-            selected_option = city_list.find('option[val="'+town+'"]');
+            selected_option = city_list.find('option[value="'+id+'"]');
 
         options.removeAttr('selected');
         selected_option.attr('selected', 'selected');
 
+        //обновляем плагин для стилизации селекта
         city_list.trigger('refresh').change();
+    });
 
+    city_select_btn.click(function(e){
+        e.preventDefault();
+        var selected_town = city_list.find('option:selected').text(),
+            selected_town_id = city_list.find('option:selected').val();
+
+
+        $('.map-wrapper').fadeOut(400);
     });
 }
 
