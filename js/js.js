@@ -102,10 +102,43 @@ $(function(){
             arrowsNavAutoHide: false
         });
 
-    $.backstretch([
-        "images/backs/meri.jpg",
-        "images/backs/parma.jpg"
-    ], {duration: 4000, fade: 1000});
+    /* Слайдер kitchens*/
+//    $('.kitchen-slider')
+//        .royalSlider({
+//            loop: true,
+//            autoScaleSlider: true,
+//            imageScaleMode: "fit",
+//            imageAlignCenter: false,
+//            controlNavigation: 'thumbnails',
+//            controlNavThumbsNavigation: false,
+//            transitionType: 'fade',
+//            thumbs: {
+//                arrows: true,
+//                spacing: 0,
+//                orientation: 'vertical'
+//            }
+//        });
+
+    $('.kitchen-slider').royalSlider({
+        autoScaleSliderHeight: 500,
+        controlNavigation: 'thumbnails',
+        thumbs: {
+            orientation: 'vertical',
+            paddingBottom: 0
+        },
+        imageAlignCenter: false,
+        imageScaleMode: "fill",
+        transitionType:'fade',
+        loop: true,
+        arrowsNav: true
+    });
+
+
+    // background slider
+//    $.backstretch([
+//        "images/backs/meri.jpg",
+//        "images/backs/parma.jpg"
+//    ], {duration: 4000, fade: 1000});
 
 });
 
@@ -166,7 +199,7 @@ function mainNavAnimate() {
 
 
 function initNavigation() {
-    $.fn.navigation('show', 'main');  //первый запуск
+    $.fn.navigation('show', 'kitchens');  //первый запуск
 
     $('.nav-link').click(function(event){
         var href = event.target.hash,
@@ -189,18 +222,29 @@ function openCatalogTwo() {
     subslider.find('.back_link').click(function(){
         subslider.fadeOut(600);
         slider.delay(200).fadeIn(400).animate({"transform": "rotate(-45deg)"}, 400);
-        slider.find('.rsThumb').delay(1000).fadeIn(300);
+        slider.find('.rsThumbs').delay(1000).fadeIn(300);
         slider.siblings('h2').delay(1000).fadeIn();
     });
 
-    $('.catalog-slider').on('click', '.link', function(){
+    slider.on('click', '.link', function(){
         var subcatalogId = $(this).attr('id');
 
-        slider.find('.rsThumb').fadeOut(300);
+        slider.find('.rsThumbs').fadeOut(300);
         slider.delay(400).animate({"transform": "rotate(0deg)"}, 400).fadeOut(400).siblings('h2').fadeOut();
 
         subslider.delay(800).fadeIn(400)
     });
+
+    slider.on('click', '.rsContent .head', function(){
+        //var subcatalogId = $(this).attr('id');
+
+        slider.find('.rsThumbs').fadeOut(300);
+        slider.delay(400).animate({"transform": "rotate(0deg)"}, 400).fadeOut(400).siblings('h2').fadeOut();
+
+        subslider.delay(800).fadeIn(400)
+    });
+
+
 }
 
 function salonsWork() {
@@ -292,6 +336,10 @@ function salonsWork() {
                     $('.site-page-salons').delay(300).fadeIn(200).addClass('active');
                     if (!$('.main_nav').hasClass('active')) {$('.main_nav').delay(300).fadeIn(200).addClass('active');}
                     break;
+                case 'kitchens':
+                    $('.site-page-kitchens').delay(300).fadeIn(200).addClass('active');
+                    if (!$('.main_nav').hasClass('active')) {$('.main_nav').delay(300).fadeIn(200).addClass('active');}
+                    break;
             }
         },
         close : function(page) {
@@ -305,6 +353,9 @@ function salonsWork() {
                     break;
                 case 'salons':
                     $('.site-page-salons').fadeOut(200);
+                    break;
+                case 'kitchens':
+                    $('.site-page-kitchens').fadeOut(200);
                     break;
             }
         }

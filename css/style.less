@@ -265,6 +265,7 @@ header {
             .head {
               color: #fff;
               font: bold italic 60px 'myriadpro-regular';
+              cursor: pointer;
             }
             .catalog-content-slider {
               height: 150px;
@@ -298,6 +299,7 @@ header {
     right: -175px !important;
     height: 175px;
     width: 175px;
+    background: url(@trans_gray);
   }
   .rsThumbs {
     position: absolute;
@@ -305,11 +307,11 @@ header {
     left: -175px;
     height: 175px;
     width: 175px;
+    background: url(@trans_gray);
     .rsThumb {
       width: 175px;
       height: 175px;
       display: block;
-      background: url(@trans_gray);
       padding: 11.31px;
       .rsTmb {
         background: url(@trans_gray);
@@ -772,6 +774,7 @@ header {
     right: -175px !important;
     height: 175px;
     width: 175px;
+    background: url(@trans_gray);
   }
   .rsThumbs {
     position: absolute;
@@ -779,11 +782,11 @@ header {
     left: -175px;
     height: 175px;
     width: 175px;
+    background: url(@trans_gray);
     .rsThumb {
       width: 175px;
       height: 175px;
       display: block;
-      background: url(@trans_gray);
       padding: 11.31px;
       .rsTmb {
         background: url(@trans_gray);
@@ -848,4 +851,29 @@ header {
     right: 50px;
     cursor: pointer;
   }
+}
+
+.site-page-kitchens {
+  height: 100%;
+  .kitchen-slider-wrapper {
+    height: 100%;
+  }
+  .kitchen-slider {
+    height: 100%;
+    width: 100%;
+    .rsOverflow {
+      height: 100px;
+      width: 100%;
+    }
+    .rsThumbsVer {
+      .rsNavItem {
+        float: none;
+        margin: 0 !important;
+        img {
+          display: block;
+        }
+      }
+    }
+  }
+
 }
