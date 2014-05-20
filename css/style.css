@@ -691,7 +691,7 @@ header .logo a {
   top: 0;
 }
 .salons-slider-wrapper .salons-slider .salons-slider-list ul li a:before {
-  left: -20px;
+  left: -19px;
   border-right: 20px solid #000;
 }
 .salons-slider-wrapper .salons-slider .salons-slider-list ul li a:after {

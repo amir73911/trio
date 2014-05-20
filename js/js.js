@@ -166,7 +166,7 @@ function mainNavAnimate() {
 
 
 function initNavigation() {
-    $.fn.navigation('show', 'salons');  //первый запуск
+    $.fn.navigation('show', 'main');  //первый запуск
 
     $('.nav-link').click(function(event){
         var href = event.target.hash,
@@ -235,6 +235,7 @@ function salonsWork() {
         city_list.trigger('refresh').change();
     });
 
+    // при клике на "Продолжить!" - анимация
     city_select_btn.click(function(e){
         e.preventDefault();
         var selected_town = city_list.find('option:selected').text(),
@@ -242,6 +243,25 @@ function salonsWork() {
 
 
         $('.map-wrapper').fadeOut(400);
+        $('.salons-slider-wrapper').delay(400).fadeIn(400);
+
+        $('.salons-slider-wrapper .head .town').text(selected_town);
+    });
+
+    $('.other_town_link').click(function(e){
+        e.preventDefault();
+        $('.salons-slider-wrapper').fadeOut(400);
+        $('.map-wrapper').delay(400).fadeIn(400);
+    });
+
+    $('.salons-slider').on('click', '.salons-content-slider',function(){
+        $('.salons-slider-wrapper').fadeOut(400);
+        $('.salon-images-slider-wrapper').delay(400).fadeIn(400);
+    });
+
+    $('.salon-images-slider-wrapper .close').click(function(){
+        $('.salon-images-slider-wrapper').fadeOut(400);
+        $('.salons-slider-wrapper').delay(400).fadeIn(400);
     });
 }
 
