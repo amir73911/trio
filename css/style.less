@@ -37,7 +37,7 @@ h2 {
 
 input.btn {
   background: url("../images/btn_back.png") center center no-repeat;
-  background-size: contain;
+  background-size: cover;
   color: #fff;
   font: 16px 'myriadpro-regular';
   border: 0;
@@ -46,6 +46,18 @@ input.btn {
   position: relative;
   min-width: 97px;
   max-width: 200px;
+}
+
+input[type="text"] {
+  border: none;
+  color: #fff;
+  font: 16px/34px 'myriadpro-regular';
+  position: relative;
+  background: url("../images/input_back.png");
+  background-size: 100% 100%;
+  width: 350px;
+  height: 29px;
+  padding: 0 20px;
 }
 
 /* Окно (страница) */
@@ -206,7 +218,7 @@ nav.main_nav {
 
 header {
   position: relative;
-  z-index: 1;
+  z-index: 100;
   .logo {
     position: absolute;
     left: 90px;
@@ -855,22 +867,379 @@ header {
 
 .site-page-kitchens {
   height: 100%;
+  width: 100%;
   .kitchen-slider-wrapper {
     height: 100%;
+    width: 100%;
+    position: relative;
+    .info-wrapper {
+      height: 100%;
+      width: 78%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 98;
+      .back {
+        display: none;
+        background: url(@trans_gray);
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+      .about {
+        display: none;
+        position: absolute;
+        top: 250px;
+        left: 50%;
+        width: @grid-size*2;
+        height: @grid-size*2;
+        margin-left: -(@grid-size*2)/2;
+        .rotation(-45deg);
+        padding: 11.31px;
+        background: url(@trans_gray);
+        .inner {
+          background: url(@trans_gray);
+          height: 100%;
+          width: 100%;
+          text-align: center;
+          .content {
+            padding-top: 53px;
+            .rotation(45deg);
+            width: 100%;
+            height: 100%;
+            font: italic 14px/30px 'myriadpro-regular';
+            color: #fff;
+            position: relative;
+            .kitchen_name {
+              font-size: 17px;
+              font-weight: bold;
+            }
+            .close {
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              bottom: -90px;
+              background: url("../images/close2.png");
+              width: 86px;
+              height: 86px;
+              margin-left: -43px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .kit {
+        display: none;
+        position: absolute;
+        top: 150px;
+        left: 50%;
+        margin-left: -460px;
+        width: 920px;
+        height: 580px;
+        background: url(@trans_gray);
+        padding: 10px;
+        .close {
+          background: url("../images/close.png");
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+        }
+        .inner {
+          background: url(@trans_gray);
+          height: 100%;
+          width: 100%;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          padding: 30px;
+          color: #fff;
+          font: 18px 'myriadpro-regular';
+          .header {
+            font: bold italic 30px 'myriadpro-regular';
+          }
+          ul.complectation {
+            &>li {
+              margin: 7px 0;
+              &>ul {
+                &>li {
+                  margin: 7px 0;
+                  span {
+                    padding-left: 10px;
+                  }
+                }
+              }
+            }
+          }
+          ul.image-list {
+            font-size: 0;
+            margin: 13px 0;
+            li {
+              display: inline-block;
+              vertical-align: middle;
+              margin-right: 22px;
+            }
+          }
+        }
+      }
+      .metering {
+        display: none;
+        position: absolute;
+        top: 150px;
+        left: 50%;
+        margin-left: -460px;
+        width: 920px;
+        height: 485px;
+        background: url(@trans_gray);
+        padding: 10px;
+        .close {
+          background: url("../images/close.png");
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+        }
+        .inner {
+          background: url(@trans_gray);
+          height: 100%;
+          width: 100%;
+          padding: 30px;
+          color: #fff;
+          font: 18px 'myriadpro-regular';
+          .header {
+            font: bold italic 30px 'myriadpro-regular';
+          }
+          .ask {
+            font-style: italic;
+            margin: 5px 0;
+          }
+          table {
+            .bottom {
+              td>* {
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 17px;
+                &:last-child {
+                  margin-right: 0;
+                }
+              }
+            }
+            td {
+              padding: 10px 20px 10px 0;
+            }
+          }
+          .jq-selectbox__select {
+            width: 322px;
+            margin-left: 15px;
+            font: 18px/32px 'myriadpro-regular';
+          }
+        }
+      }
+    }
+    nav.kitchens_nav {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      z-index: 100;
+      margin-left: -423px;
+      a {
+        color: #fff;
+        text-decoration: none;
+        font: 12px/37px 'myriadpro-regular';
+        display: block;
+        padding: 5px 18px;
+        text-transform: uppercase;
+        &.red {
+          color: #e31e24;
+        }
+      }
+      ul {
+        margin: 0 26px;
+        position: relative;
+        display: block;
+        font-size: 0;
+        &:before, &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          width: 26px;
+          height: 47px;
+          background: url("../images/main_nav_sides.png")no-repeat;
+        }
+        &:before {
+          background-position: left center;
+          left: -26px;
+        }
+        &:after {
+          background-position: right center;
+          right: -26px;
+        }
+      }
+      li {
+        display: inline-block;
+        background: url("../images/main_nav_back.png") repeat-x;
+        height: 47px;
+      }
+      &>ul {
+        white-space: nowrap;
+        &>li {
+          position: relative;
+          &>ul {
+            display: none;
+            position: absolute;
+            bottom: -48px;
+            left: -118px;
+          }
+        }
+      }
+    }
   }
   .kitchen-slider {
     height: 100%;
     width: 100%;
     .rsOverflow {
-      height: 100px;
+      height: 100%;
       width: 100%;
+      &:before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        -webkit-box-shadow: inset 0px 0px 0px 5px rgba(17, 21, 23, 0.37);
+        -moz-box-shadow:    inset 0px 0px 0px 5px rgba(17, 21, 23, 0.37);
+        box-shadow:         inset 0px 0px 0px 5px rgba(17, 21, 23, 0.37);
+        z-index: 50;
+      }
     }
     .rsThumbsVer {
+      max-height: 100%;
+      background: #000;
       .rsNavItem {
         float: none;
-        margin: 0 !important;
+        position: relative;
+        &:before {
+          content: "";
+          display: block;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+          position: absolute;
+          -webkit-box-shadow: inset 0px 0px 0px 5px rgba(17, 21, 23, 0.37);
+          -moz-box-shadow:    inset 0px 0px 0px 5px rgba(17, 21, 23, 0.37);
+          box-shadow:         inset 0px 0px 0px 5px rgba(17, 21, 23, 0.37);
+          z-index: 50;
+        }
         img {
           display: block;
+        }
+      }
+      .rsThumbsArrow {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background: #000;
+        height: 40px;
+        background: url("../images/slider_butt3.png") center center no-repeat, url(@trans_gray);
+        &.rsThumbsArrowLeft {
+          top: 0;
+        }
+        &.rsThumbsArrowRight {
+          bottom: 0;
+          .rotation(180deg);
+        }
+      }
+    }
+  }
+
+}
+
+.site-page-actions {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: url("../images/grid_back.png"), url(@trans_gray);
+  top: 0;
+  .bigactions-slider-wrapper {
+    width: @grid-width*3;
+    height: @grid-width*1.5;
+    position: absolute;
+    top: @grid-width*0.5;
+    left: @grid-width;
+    .rsOverflow {
+      width: @grid-width*3 !important;
+      height: @grid-width*1.5 !important;
+    }
+    .bigactions {
+      position: relative;
+      width: @grid-width*3;
+      height: @grid-width*1.5;
+      .item {
+        width: @grid-size;
+        height: @grid-size;
+        .rotation(45deg);
+        background: url(@trans_gray);
+        padding: 11.31px;
+        margin: @grid-el-offset;
+        z-index: 1;
+        position: absolute;
+        .inner {
+          z-index: 2;
+          position: relative;
+          background: url(@trans_gray);
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          .content {
+            width: 100%;
+            height: 100%;
+            .rotation(-45deg);
+            font: italic 15px/24px 'myriadpro-regular';
+            color: #fff;
+            text-align: center;
+            padding-top: 75px;
+            .town {
+              font-weight: bold;
+            }
+            .link {
+              background: url("../images/catalog_link.png");
+              width: 86px;
+              height: 86px;
+              position: absolute;
+              bottom: -42px;
+              left: 50%;
+              margin-left: -43px;
+              cursor: pointer;
+            }
+          }
+        }
+        &.item-1 {
+          top: 0;
+          left: 0;
+        }
+        &.item-2 {
+          top: 0;
+          left: @grid-width;
+        }
+        &.item-3 {
+          top: 0;
+          left: @grid-width*2;
+        }
+        &.item-4 {
+          top: @grid-width*0.5;
+          left: @grid-width*0.5;
+        }
+        &.item-5 {
+          top: @grid-width*0.5;
+          right: @grid-width*0.5;
         }
       }
     }

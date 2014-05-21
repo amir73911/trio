@@ -7,8 +7,10 @@ $(function(){
     mainNavAnimate(); /* Главное меню */
     openCatalogTwo(); /* Открытие подкаталога */
     salonsWork(); /* Открытие подкаталога */
+    kitchensWork(); /* Открытие подкаталога */
 
     $('select').styler();
+    //jQuery('.kit .inner').jScrollPane();
 
     $(".actions-slider").royalSlider({
         imageScaleMode: "none",
@@ -119,26 +121,37 @@ $(function(){
 //            }
 //        });
 
+    // слайдер кухонь
     $('.kitchen-slider').royalSlider({
-        autoScaleSliderHeight: 500,
         controlNavigation: 'thumbnails',
         thumbs: {
             orientation: 'vertical',
-            paddingBottom: 0
+            spacing: 0,
+            arrows:	true,
+            autoCenter: false,
+            arrowsAutoHide: true
         },
         imageAlignCenter: false,
         imageScaleMode: "fill",
         transitionType:'fade',
         loop: true,
-        arrowsNav: true
+        arrowsNav: false
     });
 
 
-    // background slider
-//    $.backstretch([
-//        "images/backs/meri.jpg",
-//        "images/backs/parma.jpg"
-//    ], {duration: 4000, fade: 1000});
+    // слайдер акций
+//    $('.bigactions-slider').royalSlider({
+//        loop: true,
+//        arrowsNav: true,
+//        slides: $('.bigactions-slider .rsContent')
+//    });
+
+
+//    background slider
+    $.backstretch([
+        "images/backs/meri.jpg",
+        "images/backs/parma.jpg"
+    ], {duration: 4000, fade: 1000});
 
 });
 
@@ -199,9 +212,9 @@ function mainNavAnimate() {
 
 
 function initNavigation() {
-    $.fn.navigation('show', 'kitchens');  //первый запуск
+    $.fn.navigation('show', 'main');  //первый запуск
 
-    $('.nav-link').click(function(event){
+    $(document).on('click', '.nav-link', (function(event){
         var href = event.target.hash,
             openPage = href.slice(1),
             closePage = $('.site-page.active').attr('id');
@@ -211,7 +224,7 @@ function initNavigation() {
             $.fn.navigation('show', openPage);
         }
         event.preventDefault();
-    });
+    }));
 }
 
 function openCatalogTwo() {
@@ -318,6 +331,34 @@ function salonsWork() {
     });
 }
 
+function kitchensWork(){
+    $('.kitchens_nav .kitchens-link').click(function(e){
+        e.preventDefault();
+
+        var href = e.target.hash.slice(1);
+
+        $('.info-wrapper .info-item').fadeOut();
+        $('.info-wrapper .'+href).fadeIn();
+        $('.info-wrapper .back').fadeIn();
+
+    });
+
+    $('.info-wrapper .about .close').click(function(e){
+        $('.info-wrapper .about').fadeOut();
+        $('.info-wrapper .back').fadeOut();
+    });
+
+    $('.info-wrapper .kit .close').click(function(e){
+        $('.info-wrapper .kit').fadeOut();
+        $('.info-wrapper .back').fadeOut();
+    });
+
+    $('.info-wrapper .metering .close').click(function(e){
+        $('.info-wrapper .metering').fadeOut();
+        $('.info-wrapper .back').fadeOut();
+    });
+}
+
 
 (function( $ ){
     var methods = {
@@ -336,9 +377,32 @@ function salonsWork() {
                     $('.site-page-salons').delay(300).fadeIn(200).addClass('active');
                     if (!$('.main_nav').hasClass('active')) {$('.main_nav').delay(300).fadeIn(200).addClass('active');}
                     break;
+                case 'partners':
+                    $('.site-page-partners').delay(300).fadeIn(200).addClass('active');
+                    if (!$('.main_nav').hasClass('active')) {$('.main_nav').delay(300).fadeIn(200).addClass('active');}
+                    break;
+                case 'about':
+                    $('.site-page-about').delay(300).fadeIn(200).addClass('active');
+                    if (!$('.main_nav').hasClass('active')) {$('.main_nav').delay(300).fadeIn(200).addClass('active');}
+                    break;
                 case 'kitchens':
                     $('.site-page-kitchens').delay(300).fadeIn(200).addClass('active');
                     if (!$('.main_nav').hasClass('active')) {$('.main_nav').delay(300).fadeIn(200).addClass('active');}
+                    var kitchenSlider = $('.kitchen-slider').data('royalSlider');
+                    setInterval(function() {
+                        kitchenSlider.updateSliderSize(true);
+                        $('.info-wrapper').width($('.kitchen-slider .rsOverflow').width());
+                    }, 500);
+                    break;
+                case 'actions':
+                    $('.site-page-actions').delay(300).fadeIn(200).addClass('active');
+                    if (!$('.main_nav').hasClass('active')) {$('.main_nav').delay(300).fadeIn(200).addClass('active');}
+
+//                    var bigactionsSlider = $('.bigactions-slider').data('royalSlider');
+//                    setInterval(function() {
+//                        bigactionsSlider.updateSliderSize(true);
+//                        $('.info-wrapper').width($('.bigactions-slider .rsOverflow').width());
+//                    }, 500);
                     break;
             }
         },
@@ -356,6 +420,15 @@ function salonsWork() {
                     break;
                 case 'kitchens':
                     $('.site-page-kitchens').fadeOut(200);
+                    break;
+                case 'actions':
+                    $('.site-page-actions').fadeOut(200);
+                    break;
+                case 'partners':
+                    $('.site-page-partners').fadeOut(200);
+                    break;
+                case 'about':
+                    $('.site-page-partners').fadeOut(200);
                     break;
             }
         }

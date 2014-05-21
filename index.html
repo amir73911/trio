@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/reset.css"/>
     <link rel="stylesheet" href="css/royalslider.css"/>
     <link rel="stylesheet" href="css/jquery.formstyler.css"/>
+    <link rel="stylesheet" href="css/jquery.jscrollpane.css"/>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/fonts.css"/>
 
@@ -20,6 +21,8 @@
     <script src="js/jquery.transform2d.js"></script>
     <script src="js/map.js"></script>
     <script src="js/jquery.formstyler.min.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <script src="js/jquery.jscrollpane.js"></script>
     <script src="js/js.js"></script>
 
     <title>ТРИО</title>
@@ -33,8 +36,8 @@
         <nav class="main_nav">
             <div class="opener"></div>
             <ul class="level-1">
-                <li><a href="#">ПАРТНЕРАМ</a></li>
-                <li><a href="#">О КОМПАНИИ</a></li>
+                <li><a href="#partners" class="nav-link">ПАРТНЕРАМ</a></li>
+                <li><a href="#about" class="nav-link">О КОМПАНИИ</a></li>
                 <li class="drop">
                     <a  href="#catalog" class="nav-link">КАТАЛОГ</a>
                     <ul class="level-2">
@@ -43,7 +46,7 @@
                         <li><a href="#">МОДЕРН</a></li>
                     </ul>
                 </li>
-                <li><a href="#">АКЦИИ</a></li>
+                <li><a href="#actions" class="nav-link">АКЦИИ</a></li>
                 <li><a href="#salons" class="nav-link">САЛОНЫ</a></li>
             </ul>
         </nav>
@@ -154,7 +157,21 @@
                         <div class="image">
                             <img src="images/content/subcatalog/1.jpg" alt=""/>
                         </div>
-                        <a class="subcatalog-link" href="#"></a>
+                        <a class="subcatalog-link nav-link" href="#kitchens"></a>
+                        <div class="rsTmb">
+                            <div class="thumb-head">Флёр</div>
+                            <div class="thumb-image">
+                                <img src="images/content/subcatalog/1.jpg" alt=""/>
+                            </div>
+                            <div class="thumb-link nav-link" href="#kitchens"></div>
+                        </div>
+                    </div>
+                    <div class="rsContent">
+                        <div class="head"><a href="#">Флёр</a></div>
+                        <div class="image">
+                            <img src="images/content/subcatalog/1.jpg" alt=""/>
+                        </div>
+                        <a class="subcatalog-link nav-link" href="#kitchens" href="#"></a>
                         <div class="rsTmb">
                             <div class="thumb-head">Флёр</div>
                             <div class="thumb-image">
@@ -168,7 +185,7 @@
                         <div class="image">
                             <img src="images/content/subcatalog/1.jpg" alt=""/>
                         </div>
-                        <a class="subcatalog-link" href="#"></a>
+                        <a class="subcatalog-link nav-link" href="#kitchens" href="#"></a>
                         <div class="rsTmb">
                             <div class="thumb-head">Флёр</div>
                             <div class="thumb-image">
@@ -182,7 +199,7 @@
                         <div class="image">
                             <img src="images/content/subcatalog/1.jpg" alt=""/>
                         </div>
-                        <a class="subcatalog-link" href="#"></a>
+                        <a class="subcatalog-link nav-link" href="#kitchens" href="#"></a>
                         <div class="rsTmb">
                             <div class="thumb-head">Флёр</div>
                             <div class="thumb-image">
@@ -196,21 +213,7 @@
                         <div class="image">
                             <img src="images/content/subcatalog/1.jpg" alt=""/>
                         </div>
-                        <a class="subcatalog-link" href="#"></a>
-                        <div class="rsTmb">
-                            <div class="thumb-head">Флёр</div>
-                            <div class="thumb-image">
-                                <img src="images/content/subcatalog/1.jpg" alt=""/>
-                            </div>
-                            <div class="thumb-link"></div>
-                        </div>
-                    </div>
-                    <div class="rsContent">
-                        <div class="head"><a href="#">Флёр</a></div>
-                        <div class="image">
-                            <img src="images/content/subcatalog/1.jpg" alt=""/>
-                        </div>
-                        <a class="subcatalog-link" href="#"></a>
+                        <a class="subcatalog-link nav-link" href="#kitchens" href="#"></a>
                         <div class="rsTmb">
                             <div class="thumb-head">Флёр</div>
                             <div class="thumb-image">
@@ -227,9 +230,145 @@
             <div class="kitchen-slider-wrapper">
                 <div class="kitchen-slider">
                     <a class="rsImg" href="images/content/kitchens/1.jpg"><img src="images/content/kitchens/1_small.jpg" class="rsTmb" /></a>
-                    <a class="rsImg" href="images/content/kitchens/1.jpg"><img src="images/content/kitchens/1_small.jpg" class="rsTmb" /></a>
-                    <a class="rsImg" href="images/content/kitchens/1.jpg"><img src="images/content/kitchens/1_small.jpg" class="rsTmb" /></a>
+                    <a class="rsImg" href="images/content/kitchens/2.jpg"><img src="images/content/kitchens/2_small.jpg" class="rsTmb" /></a>
+                    <a class="rsImg" href="images/content/kitchens/3.jpg"><img src="images/content/kitchens/3_small.jpg" class="rsTmb" /></a>
+                    <a class="rsImg" href="images/content/kitchens/4.jpg"><img src="images/content/kitchens/4_small.jpg" class="rsTmb" /></a>
+                    <a class="rsImg" href="images/content/kitchens/5.jpg"><img src="images/content/kitchens/5_small.jpg" class="rsTmb" /></a>
+                    <a class="rsImg" href="images/content/kitchens/6.jpg"><img src="images/content/kitchens/6_small.jpg" class="rsTmb" /></a>
                 </div>
+                <div class="info-wrapper">
+                    <div class="back"></div>
+                    <nav class="kitchens_nav">
+                        <ul class="level-1">
+                            <li><a href="#about" class="kitchens-link">Описание</a></li>
+                            <li><a href="#kit" class="kitchens-link">Комплект</a></li>
+                            <li><a href="#">Цвета</a></li>
+                            <li><a href="#">Рассчитать цену </a></li>
+                            <li><a href="#">Заказать звонок</a></li>
+                            <li><a href="#metering" class="kitchens-link">Заказать замер</a></li>
+                            <li><a href="#" class="red">Купить эту кухню</a></li>
+                        </ul>
+                    </nav>
+                    <div class="about info-item">
+                        <div class="inner">
+                            <div class="content">
+                                <div class="kitchen_name">ФЛЕР</div>
+                                Облака рисуют сказочные <br>
+                                узоры на небесном горизонте. <br>
+                                Подобно им, кухонный гарнитур «Флер» <br>
+                                легок и изящен, словно сладкое безе, ароматный <br>
+                                зефир, нежный эклер. Карамельные нотки золотой пати <br>
+                                рождаю атмосферу праздника, привносят изыск в   <br>
+                                повседневную жизнь. Своеобразные ручки, <br>
+                                в очертаниях которых угадывается  <br>
+                                облака рисуют сказочные <br>
+                                Воздушные легкие.  <br>
+                                <div class="close"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kit info-item">
+                        <div class="close"></div>
+                        <div class="inner">
+                            <div class="header">Комплект: <span class="kitchen-name">ФЛЕР</span></div>
+                            <ul class="complectation">
+                                <li><span>Менсолодержатели</span></li>
+                                <li>
+                                    <span>Ручки</span>
+                                    <ul>
+                                        <li>
+                                            <span>1-й ценовой категории</span>
+                                            <ul class="image-list">
+                                                <li><img src="images/content/kitchen_complect/1.jpg" alt=""/></li>
+                                                <li><img src="images/content/kitchen_complect/2.jpg" alt=""/></li>
+                                                <li><img src="images/content/kitchen_complect/3.jpg" alt=""/></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span>2-й ценовой категории</span>
+                                            <ul class="image-list">
+                                                <li><img src="images/content/kitchen_complect/1.jpg" alt=""/></li>
+                                                <li><img src="images/content/kitchen_complect/2.jpg" alt=""/></li>
+                                                <li><img src="images/content/kitchen_complect/3.jpg" alt=""/></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><span>Комплектация</span></li>
+                                <li><span>Менсолодержатели</span></li>
+                                <li>
+                                    <span>Ручки</span>
+                                    <ul>
+                                        <li>
+                                            <span>1-й ценовой категории</span>
+                                            <ul class="image-list">
+                                                <li><img src="images/content/kitchen_complect/1.jpg" alt=""/></li>
+                                                <li><img src="images/content/kitchen_complect/2.jpg" alt=""/></li>
+                                                <li><img src="images/content/kitchen_complect/3.jpg" alt=""/></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span>2-й ценовой категории</span>
+                                            <ul class="image-list">
+                                                <li><img src="images/content/kitchen_complect/1.jpg" alt=""/></li>
+                                                <li><img src="images/content/kitchen_complect/2.jpg" alt=""/></li>
+                                                <li><img src="images/content/kitchen_complect/3.jpg" alt=""/></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><span>Комплектация</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="metering info-item">
+                        <div class="close"></div>
+                        <div class="inner">
+                            <div class="header">Заказать замер: <span class="kitchen-name">ФЛЕР</span></div>
+                            <div class="ask">Заполните пожалуйста форму ниже и отправьте нам, мы свяжемся с Вами в удобное для Вас время.</div>
+                            <table>
+                                <tr>
+                                    <td>Ваше ФИО:</td>
+                                    <td><input type="text"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Выберите город:</td>
+                                    <td>
+                                        <select>
+                                            <option value="1">Москва</option>
+                                            <option value="2">Ульяновск</option>
+                                            <option value="3">Рязань</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Введите адрес:</td>
+                                    <td><input type="text"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Контактный телефон:</td>
+                                    <td><input type="text"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Удобное время звонка:</td>
+                                    <td><input type="text"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Удобное время замера:</td>
+                                    <td><input type="text"/></td>
+                                </tr>
+                                <tr class="bottom">
+                                    <td colspan="2">
+                                        <div class="captcha"><img src="images/temp_img/captcha.jpg" alt=""/></div>
+                                        <input type="text" style="width: 215px;" placeholder="Введите код с картинки"/>
+                                        <input type="submit" class="btn" value="Отправить заявку"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -420,7 +559,7 @@
                     </div>
                 </div>
             </div>
-            <div class="salon-images-slider-wrapper">
+            <div class="salon-images-slider-wrapper" style="display: none;">
                 <div class="salon-images-slider">
                     <div>
                         <img class="rsImg" src="images/content/salons/1.jpg" alt="" />
@@ -437,8 +576,64 @@
                 </div>
                 <div class="close"></div>
             </div>
-
         </div>
+
+        <div id="actions" class="site-page site-page-actions">
+            <div class="bigactions-slider-wrapper">
+                <div class="bigactions-slider">
+                    <div class="bigactions rsContent">
+                        <div class="item item-1">
+                            <div class="inner">
+                                <div class="content">
+                                    <div class="town">г. Тольятти</div>
+                                    Скидки до 50% на все кухни
+                                    <div class="link"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item item-2">
+                            <div class="inner">
+                                <div class="content">
+                                    <div class="town">г. Тольятти</div>
+                                    Скидки до 50% на все кухни
+                                    <div class="link"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item item-3">
+                            <div class="inner">
+                                <div class="content">
+                                    <div class="town">г. Тольятти</div>
+                                    Скидки до 50% на все кухни
+                                    <div class="link"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item item-4">
+                            <div class="inner">
+                                <div class="content">
+                                    <div class="town">г. Тольятти</div>
+                                    Скидки до 50% на все кухни
+                                    <div class="link"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item item-5">
+                            <div class="inner">
+                                <div class="content">
+                                    <div class="town">г. Тольятти</div>
+                                    Скидки до 50% на все кухни
+                                    <div class="link"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="partners" class="site-page site-page-partners"></div>
+        <div id="about" class="site-page site-page-about"></div>
 
 
     </div>
