@@ -175,14 +175,50 @@ function initPositions() {
     var win = $('.window'),
         el = $('.site-page-main .draggable'),
         grid = 320,
+        w_count_i = win.width()/grid,
+        h_count_i = win.height()/grid,
         w_count = Math.floor(win.width()/grid),
         h_count = Math.floor(win.height()/grid),
-        top = grid*(h_count-1);
+        top = grid*(h_count-1)
+        w_offset = 0,
+        h_offset = 0,
+        w = 0,
+        h = 0;
+
+
+
+    if ((w_count_i > w_count) && (w_count_i < w_count+0.5)) {
+        w=1;
+    } else if ((w_count_i > w_count+0.5) && (w_count_i < w_count+1)) {
+        w=2;
+    }
+
+    if ((h_count_i > h_count) && (h_count_i < h_count+0.5)) {
+        h=1;
+    } else if ((h_count_i > h_count+0.5) && (h_count_i < h_count+1)) {
+        h=2;
+    }
+
+    if (w==0 && h==2) {
+        w_offset = grid/2;
+        h_offset = grid/2;
+    }
+    if (w==1 && h==2) {
+        w_offset = grid/2;
+        h_offset = grid/2;
+    }
+    if (w==2 && h==1) {
+        w_offset = grid;
+    }
+    if (w==2 && h==2) {
+        w_offset = grid/2;
+        h_offset = grid/2;
+    }
 
     el.each(function(index){
         $(this).css({
-            'left': (grid*(w_count-(index+1)))-grid/2,
-            'top': top
+            'left': (grid*(w_count-(index+1)))-grid/2 + w_offset,
+            'top': top + h_offset
         })
     })
 }
@@ -428,7 +464,7 @@ function kitchensWork(){
                     $('.site-page-partners').fadeOut(200);
                     break;
                 case 'about':
-                    $('.site-page-partners').fadeOut(200);
+                    $('.site-page-about').fadeOut(200);
                     break;
             }
         }
